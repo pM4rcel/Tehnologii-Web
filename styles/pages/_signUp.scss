@@ -1,0 +1,35 @@
+@use "../abstracts";
+@use "../components/inputs";
+@use "../components/mask";
+
+body {
+  background-image: url("../images/bookshelf.jpg");
+  background-size: cover;
+}
+
+// main {
+//   max-width: fit-content;
+//   display: flex;
+//   align-content: center;
+//   flex-direction: column;
+//   margin: 0 auto;
+
+//   text-align: center;
+
+//   background: #f5f5f5;
+//   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+//   padding: 2em;
+
+//   .inputs {
+//     box-sizing: border-box;
+//     width: 319px;
+//     height: 60px;
+//     left: 50px;
+//     border: 1px solid #583c3c;
+//     border-radius: 20px;
+//     margin-bottom: 15px;
+//   }
+//   button {
+//     background-color: #c7d3a2;
+//   }
+// }

@@ -8,21 +8,76 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="container">
-      <p class="logo">Boo</p>
-      <nav class="nav">
-        <a href="#" class="nav__anchor">Home</a>
-        <a href="#" class="nav__anchor">Browse</a>
-        <a href="#" class="nav__anchor">Groups</a>
-        <a href="#" class="nav__anchor">MyBooks</a>
-        <div>
-          <img
-            src="./images/avatar.jpg"
-            alt="profile picture"
-            class="nav__avatar_img"
-          />
-        </div>
-      </nav>
+    <div class="mask--hidden"></div>
+    <header>
+      <div class="container container--flexible">
+        <p class="logo">Boo</p>
+        <nav class="nav">
+          <ul class="nav__linkslist">
+            <li class="nav__link">
+              <a href="#" class="nav__link--active">Home</a>
+            </li>
+            <li class="nav__link">
+              <a href="#">Browse</a>
+            </li>
+            <li class="nav__link">
+              <a href="#">Groups</a>
+            </li>
+            <li class="nav__link">
+              <a href="#">MyBooks</a>
+            </li>
+          </ul>
+          <div class="nav__avatar">
+            <img src="./images/avatar.jpg" alt="profile picture" />
+          </div>
+        </nav>
+      </div>
     </header>
+    <main>
+      <!-- <form class="card popup form"> -->
+      <!-- <p class="card__header">Welcome back</p>
+          <label class="form__label"
+          >E-mail<input class="form__input-text" type="email" required
+        /></label>
+        <label class="form__label"
+          ><p>Password<a class="forgotPass" href="#">ForgotPassword?</a></p>
+          <input class="form__input-text" type="password" required
+        /></label>
+        <input class="btn" type="submit" value="Log In" />
+        <p>
+          Don&apos;t have an account? <a class="toSignUp" href="#">Sign Up</a>
+        </p> -->
+      <!-- <select name="" id="">
+          <option value="wishToRead">Want to read</option>
+          <option value="reading">Reading</option>
+          <option value="finished">Finished</option>
+        </select> -->
+      <!-- </form> -->
+      <!-- <main>
+      <form class="card popup form">
+        <p class="card__header">Welcome back</p>
+        <label class="form__label"
+          >E-mail<input class="form__input-text" type="email" required
+        /></label>
+        <label class="form__label"
+          ><p>Password<a class="forgotPass" href="#">ForgotPassword?</a></p>
+          <input class="form__input-text" type="password" required
+        /></label>
+        <input class="btn" type="submit" value="Log In" />
+        <p>
+          Don&apos;t have an account? <a class="toSignUp" href="#">Sign Up</a>
+        </p>
+      </form> -->
+      <div class="cardBook">
+        <div class="cardBook__container">
+          <img src="./images/40121378.jpg" alt="Atomic Habits - James Clear" />
+        </div>
+        <select class="cardBook__status" name="" id="">
+          <option value="">Want to Read</option>
+          <option value="">Reading</option>
+          <option value="">Finished</option>
+        </select>
+      </div>
+    </main>
   </body>
 </html>

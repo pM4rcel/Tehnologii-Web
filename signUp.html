@@ -8,31 +8,27 @@
     <title>Document</title>
   </head>
   <body>
-    <a href="index.html">a</a>
-    <main>
+    <div class="mask--hidden"></div>
+    <main class="card popup">
       <h2>Sign up</h2>
-      <!-- <hr /> -->
       <form action="" method="post">
-        <input
-          class="inputs"
-          type="text"
-          name="firstName"
-          placeholder="First Name"
-        />
-        <input
-          class="inputs"
-          type="text"
-          name="lastName"
-          placeholder="Last Name"
-        />
-        <input class="inputs" type="email" name="email" placeholder="E-mail" />
-        <input
-          class="inputs"
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        <button class="inputs" type="submit">Register</button>
+        <label class="label" for=""
+          >userName
+          <input class="label__input" type="text" name="userName" />
+        </label>
+        <label class="label" for=""
+          >E-mail
+          <input class="label__input" type="email" name="email" />
+        </label>
+        <label class="label" for="">
+          Password
+          <input class="label__input" type="password" name="password" />
+        </label>
+        <label class="label" for=""
+          >Confirm Password
+          <input class="label__input" type="password" />
+        </label>
+        <input class="btn" type="submit" value="Register" />
       </form>
     </main>
   </body>

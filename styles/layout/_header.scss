@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+header {
+  //   position: sticky;
+  color: $neutral-color;
+  max-height: 56px;
+  background-color: $primary-darker;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}

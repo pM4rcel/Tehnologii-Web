@@ -1,0 +1,21 @@
+@mixin centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// @mixin box($bground) {
+//   display: block;
+//   width: 100%;
+//   // background-color: $bground;
+//   padding: 0.6em 1em;
+//   border-radius: 10px;
+// }
+
+@mixin box {
+  display: block;
+  width: 100%;
+  padding: 0.6em 1em;
+  border-radius: 10px;
+}

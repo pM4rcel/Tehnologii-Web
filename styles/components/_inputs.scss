@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+.label {
+  font-size: 1.25em;
+  &__input {
+    @include box();
+  }
+}
+
+select {
+  @include box();
+
+  appearance: none;
+
+  // &::after {
+  //   content: "";
+  //   width: 24px;
+  //   height: 24px;
+  //   background-image: url("../../images/arrow-down-s-line.png");
+  // }
+}
