@@ -76,3 +76,60 @@ select {
 
   }
 }
+
+// ===============================================//
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  background: $neutral-color;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color:black;
+  cursor:pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  /* position: relative; */
+}
+select::-ms-expand {
+  display: none;
+}
+.drop-container {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+ /*background: #58746f;*/
+  overflow: hidden;
+  border-radius: .25em;
+}
+
+.img{
+ position: absolute;
+ top:0;
+ height: 100%;
+ right:0;
+ width: 55px;
+ padding: 0 1em;
+ background:$primary-dark;
+ color:$neutral-color;
+
+}
+
+.img:hover path{
+ fill: $primary-darker;
+}
+.img:hover{
+ background-color:$primary-dark ;
+}
+.img_pos{
+ position: absolute;
+ top:50%;
+ transform: translateY(-50%);
+}
