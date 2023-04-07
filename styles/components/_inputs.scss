@@ -38,23 +38,26 @@ select {
 }
 
 .genfilter{
-  //display: flex;
   background: $neutral-color;
 
-  & ul{
+  .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em 2em;
-    gap: 1.5em;
-    list-style: none;
+    
+    &>ul{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em 2em;
+      gap: 1.5em;
+      list-style: none;
 
-    color: $primary-dark;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.25em;
-  }
-  &>.filterbtn{
+      color: $primary-dark;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.25em;
+    }
 
   }
 }
