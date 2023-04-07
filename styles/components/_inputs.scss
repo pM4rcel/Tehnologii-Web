@@ -133,3 +133,45 @@ select::-ms-expand {
  top:50%;
  transform: translateY(-50%);
 }
+
+//===================searchbar
+.searchBar{
+  position: relative;
+  top:0;
+  display: flex;
+}
+
+.searchBar input[type=text]{
+  padding: 6px;
+  border: 2px solid $primary-darker;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.searchBar input[type = text]:focus{
+  border:2px solid $primary-dark;
+}
+
+.searchBar input[type = text], textarea{
+  background-color: $neutral-color;
+} 
+
+// .img_search{
+//   position: absolute;
+//   top:0;
+//   height: 100%;
+//   right:0;
+//   width: 55px;
+//   padding: 0 1em;
+// }
+
+.img_search_pos{
+  position: absolute;
+  top: 10px;
+  left: 195px;
+  // right:500px;
+  color: $neutral-color;
+}
