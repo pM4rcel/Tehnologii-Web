@@ -43,6 +43,8 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5em 1.5em;
+  gap: 1.5em;
 }
 .genfilter .container > ul {
   display: flex;
@@ -55,6 +57,17 @@ select {
   text-align: center;
   font-weight: 700;
   font-size: 1.25em;
+}
+.genfilter .container > .rbtn {
+  display: flex;
+  background-color: #583c3c;
+  border-radius: 12px;
+}
+.genfilter .container > .lbtn {
+  display: flex;
+  background-color: #583c3c;
+  border-radius: 12px;
+  transform: rotate(-180deg);
 }
 
 .mask--hidden {

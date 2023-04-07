@@ -38,12 +38,14 @@ select {
 }
 
 .genfilter{
-  background: $neutral-color;
+  background: $neutral-color; 
 
   .container{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0.5em 1.5em;
+    gap: 1.5em;
     
     &>ul{
       display: flex;
@@ -57,6 +59,19 @@ select {
       text-align: center;
       font-weight: 700;
       font-size: 1.25em;
+    }
+
+    &>.rbtn{
+      display: flex;
+      background-color: $primary-dark;
+      border-radius: 12px;
+    }
+
+    &>.lbtn{
+      display: flex;
+      background-color: $primary-dark;
+      border-radius: 12px;
+      transform: rotate(-180deg);
     }
 
   }
