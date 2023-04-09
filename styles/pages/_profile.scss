@@ -62,8 +62,6 @@
     grid-template-rows: 50px 300px 300px;
     grid-template-columns:  200px 200px 200px 200px 200px;
     grid-auto-rows: 300px;
-    grid-template-areas: 
-      "theader" "theader" "theader" "theader" "theader";
 
     &>.tableheader{
       background-color: $primary-darker;
@@ -79,6 +77,7 @@
       display: flex;
       justify-content: center;
       align-self: center;
+      padding: 1em;
     }
 
     &>.field{
@@ -91,9 +90,7 @@
       font-size: 1.2em;
       padding: 5em;
     }
-
   }
 }
-
 
 
