@@ -16,3 +16,8 @@ function togglePassword(event){
 
 // Later on: 
 //          -> function that assures that password input and its confirmation match
+
+// function popup(popping, element, state){
+//     popping.style.display = state;
+//     document.getElementById('mask').style.display = state;
+// }

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
 *,
 *::before,
 *::after {
@@ -16,30 +17,46 @@ a {
 }
 
 .cardBook {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-  padding: 1em;
+  display: block;
+  min-width: 200px;
+  max-width: 200px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 300ms ease-in-out;
+  padding: 1.25em;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 1em auto;
 }
-.cardBook__container {
+.cardBook:hover {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+.cardBook div:first-of-type {
   border-radius: inherit;
   overflow: hidden;
   max-width: 160px;
   height: 232px;
 }
-.cardBook__container > img {
+.cardBook img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.cardBook__rating {
+  margin: 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cardBook__rating svg {
+  width: 24px;
+  height: 24px;
 }
 
 .btn {
   display: block;
   width: 100%;
   padding: 0.5em 1em;
-  border-radius: 30px;
+  border-radius: 15px;
   font-size: 1.25em;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
   border-width: 2px;
@@ -58,6 +75,27 @@ a {
   border-color: #583c3c;
   color: #583c3c;
 }
+.btn--empty {
+  background-color: transparent;
+  color: #583c3c;
+}
+.btn--empty:hover {
+  background-color: #c5ad99;
+  border-color: #c5ad99;
+  color: #f5f5f5;
+}
+.btn--empty:hover path {
+  fill: #f5f5f5;
+}
+.btn__icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+}
+.btn__icon > path {
+  transition: fill 300ms ease-in-out;
+}
 
 .label {
   font-weight: 500;
@@ -66,7 +104,7 @@ a {
   display: block;
   width: 100%;
   padding: 0.5em 1em;
-  border-radius: 30px;
+  border-radius: 15px;
   font-size: 1.25em;
   background-color: transparent;
   font-weight: 500;
@@ -83,7 +121,7 @@ select {
   display: block;
   width: 100%;
   padding: 0.5em 1em;
-  border-radius: 30px;
+  border-radius: 15px;
   font-size: 1.25em;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -140,64 +178,6 @@ select {
   transform: rotate(-180deg);
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background: #f5f5f5;
-  background-image: none;
-  flex: 1;
-  padding: 0 0.5em;
-  color: black;
-  cursor: pointer;
-  font-size: 1em;
-  font-family: "Open Sans", sans-serif;
-  /* position: relative; */
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-.drop-container {
-  position: relative;
-  display: flex;
-  width: 20em;
-  height: 3em;
-  line-height: 3;
-  /*background: #58746f;*/
-  overflow: hidden;
-  border-radius: 0.25em;
-}
-
-.img {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  right: 0;
-  width: 55px;
-  padding: 0 1em;
-  background: #583c3c;
-  color: #f5f5f5;
-}
-
-.img:hover path {
-  fill: #c5ad99;
-}
-
-.img:hover {
-  background-color: #583c3c;
-}
-
-.img_pos {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .searchBar {
   position: relative;
   top: 0;
@@ -218,7 +198,8 @@ select::-ms-expand {
   border: 2px solid #583c3c;
 }
 
-.searchBar input[type=text], textarea {
+.searchBar input[type=text],
+textarea {
   background-color: #f5f5f5;
 }
 
@@ -229,7 +210,46 @@ select::-ms-expand {
   color: #f5f5f5;
 }
 
+.dropdown {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.dropdown__input {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  font-size: 1.25em;
+  background-color: transparent;
+  font-weight: 500;
+  font-weight: inherit;
+  color: #583c3c;
+  outline: unset;
+  border-color: transparent;
+  border: 2px solid #583c3c;
+  position: relative;
+  background-color: inherit;
+  border-radius: 10px;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.dropdown__arrow {
+  display: block;
+  box-sizing: initial;
+  position: absolute;
+  padding: 0.2em;
+  top: 50%;
+  max-height: 24px;
+  width: 24px;
+  z-index: -1;
+  background-color: #583c3c;
+  transform: translateY(-50%);
+  right: 0;
+}
+
 header {
+  display: flex;
   color: #f5f5f5;
   max-height: 56px;
   background-color: #c5ad99;
@@ -237,6 +257,18 @@ header {
 header > div {
   display: flex;
   justify-content: space-between;
+}
+
+.logo {
+  align-self: center;
+  font-family: "Leckerli One", cursive;
+  font-size: 2em;
+  margin: 0;
+  transition: color 300ms ease-in-out;
+  text-decoration: none;
+}
+.logo:hover {
+  color: #583c3c;
 }
 
 .nav {
@@ -317,9 +349,22 @@ body {
   margin: 0 auto;
 }
 
-.popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.genresection {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.genresection p:first-of-type {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #583c3c;
+}
+
+@media (min-width: 400px) {
+  .genresection__carousel {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cardBook {
+    margin: 1em;
+  }
 }/*# sourceMappingURL=main.css.map */

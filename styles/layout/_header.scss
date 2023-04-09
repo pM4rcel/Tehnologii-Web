@@ -1,13 +1,27 @@
 @use "../abstracts/" as *;
 
 header {
+  display: flex;
   //   position: sticky;
   color: $neutral-color;
+  // font-family: $logo-font;
   max-height: 56px;
   background-color: $primary-darker;
 
   & > div {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+.logo {
+  align-self: center;
+  font-family: $logo-font;
+  font-size: 2em;
+  margin: 0;
+  transition: color 300ms ease-in-out;
+  text-decoration: none;
+  &:hover {
+    color: $primary-dark;
   }
 }
