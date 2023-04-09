@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+svg,
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+}
+
 .cardBook {
   width: -moz-fit-content;
   width: fit-content;
@@ -15,27 +31,60 @@
   height: 232px;
 }
 .cardBook__container > img {
-  width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.label {
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 30px;
   font-size: 1.25em;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+  font-weight: 700;
+  outline: 0;
+}
+.btn--success {
+  background-color: #c7d3a2;
+  border-color: #c7d3a2;
+  color: #f5f5f5;
+}
+.btn--success:hover {
+  background-color: transparent;
+  border-color: #583c3c;
+  color: #583c3c;
+}
+
+.label {
+  font-weight: 500;
 }
 .label__input {
   display: block;
   width: 100%;
-  padding: 0.6em 1em;
-  border-radius: 10px;
+  padding: 0.5em 1em;
+  border-radius: 30px;
+  font-size: 1.25em;
+  background-color: transparent;
+  font-weight: 500;
+  font-weight: inherit;
+  color: #583c3c;
+  outline: unset;
+  border-color: transparent;
+  border: 2px solid #583c3c;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
 }
 
 select {
   display: block;
   width: 100%;
-  padding: 0.6em 1em;
-  border-radius: 10px;
+  padding: 0.5em 1em;
+  border-radius: 30px;
+  font-size: 1.25em;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -93,10 +142,17 @@ header > div {
   border: 2px solid #f5f5f5;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
+@media (max-width: 719px) {
+  .nav {
+    background-color: #583c3c;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
 @media (min-width: 720px) {
   .nav {
     flex-direction: row;
@@ -110,12 +166,6 @@ header > div {
     height: 36px;
   }
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   min-height: 100vh;
   margin: 0;
@@ -126,16 +176,6 @@ body {
   padding: 0 2em;
   width: 90%;
   margin: 0 auto;
-}
-
-.btn {
-  display: block;
-  width: 100%;
-  padding: 0.6em 1em;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 300ms ease-in-out, color 300ms ease-in-out, box-shadow 300ms ease-in-out;
-  font-weight: 700;
 }
 
 .popup {

@@ -1,9 +1,26 @@
 @use "../abstracts/" as *;
 
+.btn {
+  @include button();
+  cursor: pointer;
+  font-weight: 700;
+  outline: 0;
+
+  &--success {
+    @include buttonPaintFull($status-success, $neutral-color);
+
+    &:hover {
+      @include buttonPaint(transparent, $primary-dark, $primary-dark);
+    }
+  }
+}
+
 .label {
-  font-size: 1.25em;
+  font-weight: 500;
   &__input {
-    @include box();
+    @include input(transparent, $primary-dark);
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
   }
 }
 

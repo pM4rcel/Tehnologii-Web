@@ -9,7 +9,7 @@
   </head>
   <body>
     <main class="card form">
-      <h2 class="form__header">Sign up</h2>
+      <h2 class="form__header">Welcome back</h2>
       <form action="" method="post">
         <label class="label" for="">
           Username
@@ -20,12 +20,9 @@
             maxlength="20"
           />
         </label>
-        <label class="label" for=""
-          >E-mail
-          <input class="label__input" type="email" name="email" />
-        </label>
         <label class="label" for="">
           Password
+          <!-- <a href="#">Forgot Password?</a> -->
           <div class="pass">
             <input
               class="label__input"
@@ -43,22 +40,8 @@
             </div>
           </div>
         </label>
-        <label class="label" for=""
-          >Confirm Password
-          <div class="pass">
-            <input class="label__input" type="password" maxlength="20" />
-            <div class="pass__toggle" onclick="togglePassword(event)">
-              <svg>
-                <use xlink:href="#eye-off-line"></use>
-              </svg>
-              <svg style="display: none">
-                <use xlink:href="#eye-line"></use>
-              </svg>
-            </div>
-          </div>
-        </label>
-        <input class="btn btn--success" type="submit" value="Register" />
-        <p>Already have an account? <a href="login.html">Log In</a></p>
+        <input class="btn btn--success" type="submit" value="Log In" />
+        <p>Don&apos;t have an account? <a href="signup.html">Sign Up</a></p>
       </form>
     </main>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">

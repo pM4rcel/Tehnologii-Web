@@ -1,13 +1,8 @@
+@use "./base";
 @use "./abstracts" as *;
 @use "./components" as *;
 @use "./layout/header";
 @use "./layout/navigation";
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {
   min-height: 100vh;
@@ -21,13 +16,12 @@ body {
   margin: 0 auto;
 }
 
-.btn {
-  @include box;
-  cursor: pointer;
-  transition: background-color 300ms ease-in-out, color 300ms ease-in-out,
-    box-shadow 300ms ease-in-out;
-  font-weight: 700;
-}
+// .btn {
+//   @include box;
+//   cursor: pointer;
+
+//   font-weight: 700;
+// }
 
 // .inputs {
 
@@ -64,12 +58,12 @@ body {
 
 //   .btn {
 //     font-size: 1.2em;
-//     background-color: $primary-dark;
-//     color: $neutral-color;
-//     outline: unset;
-//     box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 50%);
-//     border-color: $primary-dark;
-//     border: 2px solid $primary-dark;
+// background-color: $primary-dark;
+// color: $neutral-color;
+// outline: unset;
+// box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 50%);
+// border-color: $primary-dark;
+// border: 2px solid $primary-dark;
 
 //     &:hover {
 //       background-color: $neutral-color;

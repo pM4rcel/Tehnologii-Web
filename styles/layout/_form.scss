@@ -1,0 +1,58 @@
+@use "../abstracts" as *;
+@use "../components/mask";
+
+body {
+  background: url("../images/bookshelf.jpg") no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+  padding: 2em 1.5em;
+  display: flex;
+}
+
+.form {
+  align-self: center;
+  margin: 0 auto;
+  color: $primary-dark;
+  background-color: $neutral-color;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 25%);
+  max-width: 320px;
+  width: 100%;
+  border-radius: 30px;
+  padding: 2em;
+
+  &__header {
+    margin-top: 0;
+  }
+
+  & p:last-of-type {
+    text-align: center;
+  }
+
+  & input:last-of-type() {
+    margin-top: 1em;
+  }
+
+  input[type="submit"] {
+    margin-top: 1em;
+  }
+
+  p {
+    font-size: 0.75em;
+  }
+}
+
+.pass {
+  position: relative;
+
+  &__toggle {
+    background-color: $neutral-color;
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    right: 1em;
+    top: 50%;
+  }
+}
