@@ -9,35 +9,45 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="container">
-      <p class="logo">Boo</p>
-      <nav class="nav">
-        <a href="#" class="nav__anchor">Home</a>
-        <a href="#" class="nav__anchor">Browse</a>
-        <a href="#" class="nav__anchor">Groups</a>
-        <a href="#" class="nav__anchor">MyBooks</a>
-        <div>
-          <img
-            src="./images/avatar.jpg"
-            alt="profile picture"
-            class="nav__avatar_img"
-          />
-        </div>
-      </nav>
+    <header>
+      <div class="container container--flexible">
+        <p class="logo">Boo</p>
+        <nav class="nav">
+          <ul class="nav__linkslist">
+            <li class="nav__link">
+              <a href="#" class="nav__link--active">Home</a>
+            </li>
+            <li class="nav__link">
+              <a href="#">Browse</a>
+            </li>
+            <li class="nav__link">
+              <a href="#">Groups</a>
+            </li>
+            <li class="nav__link">
+              <a href="#">MyBooks</a>
+            </li>
+          </ul>
+          <div class="nav__avatar">
+            <img src="./images/avatar.jpg" alt="profile picture" />
+          </div>
+        </nav>
+      </div>
     </header>
 
-    <div class="profileHeader">
-        <div class="profile_picture">
-            <img src="./images/avatar.jpg"
-            alt="profile picture"
-            class="nav__avatar_img">
-        </div>
-        <div class="profile_info">
-            <p>Username: username1</p>
-            <p>First name: User </p>
-            <p>Last name: Name </p>
-            <p>Email: username@gmail.com </p>            
-        </div>
-    </div>
+    <div class="profile">
+      <div class="profile_info">
+        <img src="./images/avatar.jpg" alt="Profile picture" class="avatar_img">
+        <p> Gica Gugustinescu </p>
+      </div>
+      <div class="profile_info2">
+          <p>Username: gicaGUGUSTIUCUL</p>
+          <p>Email: tux@gmail.com </p>            
+      </div>
+      <div class="description">
+            Cea mai smechera descriere. Sunt un cititor inrait, am citit abecedarul de doua ori.<br>
+            #Anaaremere
+      </div>
+      <div class="btn">Statistics</div>
+
   </body>
 </html>
