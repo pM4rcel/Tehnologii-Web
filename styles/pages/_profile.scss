@@ -1,0 +1,55 @@
+@use "../abstracts/" as *;
+@use "../components/inputs";
+@import "main.css";
+
+
+.profile{
+  background-color: $neutral-color;
+  width: 20em;
+  height: 40em;
+
+  .avatar_img{
+    width: 15em;
+    height: 15em;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .profile_info{
+      color: $primary-dark;
+      left: 10%;
+      text-align: center;
+      padding: 2em 2em 0em 2em;
+      font-weight: 1000;
+      font-size: 1em;
+  }
+
+  .profile_info2{
+    color: $primary-dark;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 1em 2em 0em 2em;
+  }
+
+  .description{
+    color: $primary-dark;
+    text-align: left;
+    padding: 2em;
+    font-size: 0.8em;
+  }
+  
+  .btn{
+    width: fit-content;
+    position: relative;
+    left: 4em;    
+    background-color: $primary-dark;
+    color: $neutral-color;
+  }
+
+  .btn:hover{
+    @include buttonPaint(transparent, $primary-dark, $primary-dark);
+  }
+}
+
+
