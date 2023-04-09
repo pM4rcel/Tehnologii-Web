@@ -195,19 +195,17 @@ select::-ms-expand {
   color: #f5f5f5;
 }
 
-.profile {
+.page {
+  display: flex;
+  padding: 2em;
+  gap: 3em;
+}
+.page > .profile {
   background-color: #f5f5f5;
   width: 20em;
   height: 40em;
 }
-.profile .avatar_img {
-  width: 15em;
-  height: 15em;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-}
-.profile .profile_info {
+.page > .profile > .profile_info {
   color: #583c3c;
   left: 10%;
   text-align: center;
@@ -215,20 +213,27 @@ select::-ms-expand {
   font-weight: 1000;
   font-size: 1em;
 }
-.profile .profile_info2 {
+.page > .profile > .profile_info > .avatar_img {
+  width: 15em;
+  height: 15em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.page > .profile > .profile_info2 {
   color: #583c3c;
   text-align: left;
   font-weight: 700;
   font-size: 1em;
   padding: 1em 2em 0em 2em;
 }
-.profile .description {
+.page > .profile > .description {
   color: #583c3c;
   text-align: left;
   padding: 2em;
   font-size: 0.8em;
 }
-.profile .btn {
+.page > .profile > .btn {
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -236,22 +241,20 @@ select::-ms-expand {
   background-color: #583c3c;
   color: #f5f5f5;
 }
-.profile .btn:hover {
+.page > .profile > .btn:hover {
   background-color: transparent;
   border-color: #583c3c;
   color: #583c3c;
 }
-
-.grid-container {
+.page .grid-container {
   display: grid;
   background-color: #f5f5f5;
   grid-template-rows: 50px 300px 300px;
   grid-template-columns: 200px 200px 200px 200px 200px;
   grid-auto-rows: 300px;
-  grid-row-gap: 5px;
+  grid-template-areas: "theader" "theader" "theader" "theader" "theader";
 }
-
-.grid-item1 {
+.page .grid-container > .tableheader {
   background-color: #c5ad99;
   text-align: center;
   color: #f5f5f5;
@@ -259,15 +262,13 @@ select::-ms-expand {
   font-size: 1.6em;
   padding: 0.3em;
 }
-
-.grid-item2 {
+.page .grid-container > .cover {
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-self: center;
 }
-
-.grid-item3 {
+.page .grid-container > .field {
   background-color: #f5f5f5;
   text-align: center;
   display: flex;
