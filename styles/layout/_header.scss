@@ -1,11 +1,11 @@
 @use "../abstracts/" as *;
 
 header {
-  display: flex;
+  // display: flex;
   //   position: sticky;
   color: $neutral-color;
   // font-family: $logo-font;
-  max-height: 56px;
+  // max-height: 56px;
   background-color: $primary-darker;
 
   & > div {

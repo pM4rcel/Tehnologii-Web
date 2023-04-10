@@ -38,13 +38,18 @@
   fill: #f5f5f5;
 }
 .btn__icon {
-  display: inline-block;
-  vertical-align: middle;
+  margin-left: 0.4em;
+  align-self: center;
   width: 24px;
   height: 24px;
 }
 .btn__icon > path {
   transition: fill 300ms ease-in-out;
+}
+.btnfilter {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  display: flex;
 }
 
 .label {
@@ -76,56 +81,6 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-
-.filterbtn {
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0.5em;
-  border: 1px solid #583c3c;
-  border-radius: 10px;
-  color: #583c3c;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.25em;
-}
-.filterbtn > svg {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.genfilter {
-  background: #f5f5f5;
-}
-.genfilter .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5em 1.5em;
-  gap: 1.5em;
-}
-.genfilter .container > ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1em 2em;
-  gap: 1.5em;
-  list-style: none;
-  color: #583c3c;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.25em;
-}
-.genfilter .container > .rbtn {
-  display: flex;
-  background-color: #583c3c;
-  border-radius: 12px;
-}
-.genfilter .container > .lbtn {
-  display: flex;
-  background-color: #583c3c;
-  border-radius: 12px;
-  transform: rotate(-180deg);
 }
 
 .searchBar {

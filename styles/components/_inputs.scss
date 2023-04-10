@@ -29,8 +29,10 @@
   }
 
   &__icon {
-    display: inline-block;
-    vertical-align: middle;
+    // display: inline-block;
+    // vertical-align: middle;
+    margin-left: 0.4em;
+    align-self: center;
 
     width: 24px;
     height: 24px;
@@ -38,6 +40,11 @@
     & > path {
       transition: fill 300ms ease-in-out;
     }
+  }
+
+  &filter {
+    max-width: fit-content;
+    display: flex;
   }
 }
 
@@ -54,69 +61,6 @@ select {
   @include box();
 
   appearance: none;
-
-  // &::after {
-  //   content: "";
-  //   width: 24px;
-  //   height: 24px;
-  //   background-image: url("../../images/arrow-down-s-line.png");
-  // }
-}
-
-.filterbtn {
-  width: fit-content;
-  padding: 0.5em;
-  border: 1px solid $primary-dark;
-  border-radius: 10px;
-
-  color: $primary-dark;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.25em;
-
-  & > svg {
-    display: inline-block;
-    vertical-align: middle;
-  }
-}
-
-.genfilter {
-  background: $neutral-color;
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em 1.5em;
-    gap: 1.5em;
-
-    & > ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1em 2em;
-      gap: 1.5em;
-      list-style: none;
-
-      color: $primary-dark;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.25em;
-    }
-
-    & > .rbtn {
-      display: flex;
-      background-color: $primary-dark;
-      border-radius: 12px;
-    }
-
-    & > .lbtn {
-      display: flex;
-      background-color: $primary-dark;
-      border-radius: 12px;
-      transform: rotate(-180deg);
-    }
-  }
 }
 
 //============

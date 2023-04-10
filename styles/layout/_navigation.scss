@@ -5,9 +5,11 @@
   color: $neutral-color;
   font-size: 1.25em;
   display: flex;
-  flex-direction: column-reverse;
+  // flex-direction: column-reverse;
+  max-height: 56px;
 
   &__linkslist {
+    display: none;
     margin: 0;
     list-style: none;
     height: 100%;
@@ -39,9 +41,8 @@
   &__avatar {
     align-self: center;
     margin-left: 1em;
-    width: 60px;
-    height: 60px;
-    align-self: center;
+    width: 36px;
+    height: 36px;
 
     & > img {
       border-radius: 50%;
@@ -52,13 +53,13 @@
 }
 
 @media (max-width: 719px) {
-  .nav {
-    background-color: $primary-dark;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-  }
+  // .nav {
+  //   background-color: $primary-dark;
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  // }
 }
 
 @media (min-width: 720px) {
@@ -69,15 +70,15 @@
       align-items: center;
     }
 
-    &__avatar {
-      width: 36px;
-      height: 36px;
-    }
+    // &__avatar {
+    //   width: 36px;
+    //   height: 36px;
+    // }
     // position: relative;
     // flex-direction: column-reverse;
 
     // &__linkslist {
-    //   flex-direction: column;
+    //   display: none;
     // }
   }
 }
