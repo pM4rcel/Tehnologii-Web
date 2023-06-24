@@ -22,12 +22,12 @@ body {
 //  & p:first-of-type {
 //    font-size: 1.5em;
 //    font-weight: 700;
-//    color: $primary-dark;
+//    color: var(--clr-primary-800);
 //  }
 //}
 //
 //.genresfilter {
-//  background: $neutral-color;
+//  background: var(--clr-neutral-100);
 //
 //  & > div {
 //    display: flex;
@@ -77,8 +77,8 @@ body {
 //
 //    &:hover {
 //      background-color: transparent;
-//      border-color: $neutral-color;
-//      color: $neutral-color;
+//      border-color: var(--clr-neutral-100);
+//      color: var(--clr-neutral-100);
 //    }
 //  }
 //}

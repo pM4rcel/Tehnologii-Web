@@ -7,12 +7,12 @@
 //   gap: 3em;
 
 //   &>.profile{
-//     background-color: $neutral-color;
+//     background-color: var(--clr-neutral-100);
 //     width: 20em;
 //     height: 40em;
 
 //     &>.profile_info{
-//       color: $primary-dark;
+//       color: var(--clr-primary-800);
 //       left: 10%;
 //       text-align: center;
 //       padding: 2em 2em 0em 2em;
@@ -28,7 +28,7 @@
 //     }
 
 //     &>.profile_info2{
-//       color: $primary-dark;
+//       color: var(--clr-primary-800);
 //       text-align: left;
 //       font-weight: 700;
 //       font-size: 1em;
@@ -36,7 +36,7 @@
 //     }
 
 //     &>.description{
-//       color: $primary-dark;
+//       color: var(--clr-primary-800);
 //       text-align: left;
 //       padding: 2em;
 //       font-size: 0.8em;
@@ -46,33 +46,33 @@
 //       width: fit-content;
 //       position: relative;
 //       left: 4em;
-//       background-color: $primary-dark;
-//       color: $neutral-color;
+//       background-color: var(--clr-primary-800);
+//       color: var(--clr-neutral-100);
 //     }
 
 //     &>.btn:hover{
-//       @include buttonPaint(transparent, $primary-dark, $primary-dark);
+//       @include buttonPaint(transparent, var(--clr-primary-800), var(--clr-primary-800));
 //     }
 //   }
 
 //   .grid-container{
 //     display: grid;
-//     background-color: $neutral-color;
+//     background-color: var(--clr-neutral-100);
 //     grid-template-rows: 50px 300px 300px;
 //     grid-template-columns:  200px 200px 200px 200px 200px;
 //     grid-auto-rows: 300px;
 
 //     &>.tableheader{
-//       background-color: $primary-darker;
+//       background-color: var(--clr-primary-500);
 //       text-align: center;
-//       color: $neutral-color;
+//       color: var(--clr-neutral-100);
 //       font-weight: 700;
 //       font-size: 1.6em;
 //       padding: 0.3em;
 //     }
 
 //     &>.cover{
-//       background-color: $neutral-color;
+//       background-color: var(--clr-neutral-100);
 //       display: flex;
 //       justify-content: center;
 //       align-self: center;
@@ -80,11 +80,11 @@
 //     }
 
 //     &>.field{
-//       background-color: $neutral-color;
+//       background-color: var(--clr-neutral-100);
 //       text-align: center;
 //       display: flex;
 //       justify-content: center;
-//       color: $primary-dark;
+//       color: var(--clr-primary-800);
 //       font-weight: 700;
 //       font-size: 1.2em;
 //       padding: 5em;
