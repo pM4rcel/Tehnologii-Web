@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
+
+// $default-font: ;
+// $logo-font: ;
+
+// Default border-radius
+$default-bradius: 15px;
+
+// Color pallete
+// -> main colors
+$neutral-color: #f5f5f5;
+$primary-light: #e8d3c3;
+$primary-color: #e8d3c3;
+$primary-darker: #c5ad99;
+$primary-dark: #583c3c;
+
+// -> status colors
+$status-success: #c7d3a2;
+$color-gold: #ffd700;
+
+$color-pallete: (
+  "clr-neutral-100": #f5f5f5,
+  "clr-primary-200": #e8d3c3,
+  "clr-primary-300": #e8d3c3,
+  "clr-primary-500": #c5ad99,
+  "clr-primary-800": #583c3c,
+  "clr-status-success": #c7d3a2,
+  "clr-gold": #ffd700,
+  "clr-status-error": #8a2f2f,
+);
+
+:root {
+  @each $color, $value in $color-pallete {
+    --#{$color}: #{$value};
+  }
+  --font-logo: "Leckerli One", cursive;
+  --font-site: "Open Sans", sans-serif;
+}

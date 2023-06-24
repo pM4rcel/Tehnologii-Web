@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boo</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./static/resources/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./static/styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <p class="logo">Boo</p>
+        <nav class="nav">
+          <ul class="nav__linkslist">
+            <template id="nav__link">
+              <li class="nav__link">
+                <a href="/" class="link">default</a>
+              </li>
+            </template>
+            <li class="nav__link">
+              <a href="/" class="link">Home</a>
+            </li>
+            <li class="nav__link">
+              <a href="/groups" class="link">Groups</a>
+            </li>
+            <li class="nav__link">
+              <a href="/login" class="link">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main></main>
+    <script src="./static/scripts/routing.js"></script>
+    <script src="./static/scripts/forms.js"></script>
+    <script src="./static/scripts/request.js"></script>
+  </body>
+</html>
