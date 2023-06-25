@@ -17,6 +17,7 @@ import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.security.spec.ECField;
+import java.util.List;
 
 @WebServlet(urlPatterns = {"/groups", "/groups/*"})
 public class GroupController extends HttpServlet {
@@ -132,6 +133,24 @@ public class GroupController extends HttpServlet {
             out.close();
             return;
         }
+        // _ api v1 groups
+        if (words.length == 4) {
+            List<GroupEntity> groups = groupService.getAllGroups();
+            String responseBody;
+            try {
+                responseBody = objectMapper.writeValueAsString(groups);
+            }catch (Exception e){
+                out.println("Bad request");
+                out.close();
+                resp.setStatus(400);
+                return;
+            }
+            resp.setStatus(200);
+            out.println(responseBody);
+            out.close();
+            return;
+        }
+
         out.println("Bad request");
         out.close();
         resp.setStatus(400);
