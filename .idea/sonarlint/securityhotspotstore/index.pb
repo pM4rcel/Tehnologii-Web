@@ -5,9 +5,6 @@ U
 %src/static/styles/pages/_profile.scss,5\d\5d73eb805c1a9db6afcc42dbe67c405f8e640522
 R
 "src/static/styles/base/_reset.scss,8\b\8be3d06a7fe76758c622e727adef2d27e8939f5e
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 X
 (src/static/styles/components/_cards.scss,0\8\080692eeaa2bca7765ba65f602f2556cc685e3b8
 [
@@ -22,8 +19,6 @@ X
 (src/static/styles/abstracts/_mixins.scss,5\f\5f577a724c664b6e3105732cf8d94d76456068ef
 A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 T
 $src/static/styles/layout/_index.scss,3\a\3a96f85773e81be461177485de56685684e14735
 M
