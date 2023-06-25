@@ -8,22 +8,22 @@
   outline: 0;
 
   &--success {
-    @include buttonPaintFull($status-success, $neutral-color);
+    @include buttonPaintFull(var(--clr-status-success), var(--clr-neutral-100));
 
     &:hover {
-      @include buttonPaint(transparent, $primary-dark, $primary-dark);
+      @include buttonPaint(transparent, var(--clr-primary-800), var(--clr-primary-800));
     }
   }
 
   &--empty {
     background-color: transparent;
-    color: $primary-dark;
+    color: var(--clr-primary-800);
 
     &:hover {
-      @include buttonPaint($primary-darker, $neutral-color, $primary-darker);
+      @include buttonPaint(var(--clr-primary-500), var(--clr-neutral-100), var(--clr-primary-500));
 
       & path {
-        fill: $neutral-color;
+        fill: var(--clr-neutral-100);
       }
     }
   }
@@ -51,7 +51,7 @@
 .label {
   font-weight: 500;
   &__input {
-    @include input(transparent, $primary-dark);
+    @include input(transparent, var(--clr-primary-800));
     margin-top: 0.25em;
     margin-bottom: 0.5em;
   }
@@ -72,7 +72,7 @@ select {
 
 .searchBar input[type="text"] {
   padding: 6px;
-  border: 2px solid $primary-darker;
+  border: 2px solid var(--clr-primary-500);
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
@@ -81,12 +81,12 @@ select {
 }
 
 .searchBar input[type="text"]:focus {
-  border: 2px solid $primary-dark;
+  border: 2px solid var(--clr-primary-800);
 }
 
 .searchBar input[type="text"],
 textarea {
-  background-color: $neutral-color;
+  background-color: var(--clr-neutral-100);
 }
 
 // .img_search{
@@ -103,7 +103,7 @@ textarea {
   top: 10px;
   left: 195px;
   // right:500px;
-  color: $neutral-color;
+  color: var(--clr-neutral-100);
 }
 
 .dropdown {
@@ -112,7 +112,7 @@ textarea {
   border-radius: 8px;
 
   &__input {
-    @include input(transparent, $primary-dark);
+    @include input(transparent, var(--clr-primary-800));
     position: relative;
     background-color: inherit;
     border-radius: 10px;
@@ -129,7 +129,7 @@ textarea {
     max-height: 24px;
     width: 24px;
     z-index: -1;
-    background-color: $primary-dark;
+    background-color: var(--clr-primary-800);
     transform: translateY(-50%);
     right: 0;
   }
@@ -154,7 +154,7 @@ textarea {
 
   &__toggle {
     display: block;
-    background-color: $neutral-color;
+    background-color: var(--clr-neutral-100);
     cursor: pointer;
     position: absolute;
     transform: translateY(-50%);
