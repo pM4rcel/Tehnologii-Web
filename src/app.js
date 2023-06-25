@@ -1,10 +1,8 @@
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
-const dotenv = require('dotenv');
 
-dotenv.config();
-
+require('dotenv').config();
 
 
 const CONTENT_TYPE = new Map([
@@ -30,6 +28,7 @@ const app = http.createServer((request, response) => {
             response.end('Internal Server Error');
         }
     });
+
 });
 
 const PORT = process.env.PORT || 3000;

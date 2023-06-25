@@ -1,13 +1,17 @@
 @use "../abstracts" as *;
 
-.background {
+.fullPage {
   position: relative;
-  background: url("/static/resources/bookshelf.jpg") no-repeat;
   background-size: cover;
   backdrop-filter: blur(5px);
   padding: 2em 1.5em;
   display: flex;
   min-height: calc(100vh - 2.7em);
+}
+
+.background {
+  background: url("/static/resources/bookshelf.jpg") no-repeat;
+
 
   @media (min-width: 720px) {
     min-height: calc(100vh - 55.2px);

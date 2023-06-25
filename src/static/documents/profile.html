@@ -1,89 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/profile.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <div class="container container--flexible">
-        <p class="logo">Boo</p>
-        <nav class="nav">
-          <ul class="nav__linkslist">
-            <li class="nav__link">
-              <a href="#" class="nav__link--active">Home</a>
-            </li>
-            <li class="nav__link">
-              <a href="#">Browse</a>
-            </li>
-            <li class="nav__link">
-              <a href="#">Groups</a>
-            </li>
-            <li class="nav__link">
-              <a href="#">MyBooks</a>
-            </li>
-          </ul>
-          <div class="nav__avatar">
-            <img src="./images/avatar.jpg" alt="profile picture" />
-          </div>
-        </nav>
-      </div>
-    </header>
-    <div class="page container">
-      <div class="profile">
-        <div class="profile_info">
-          <img
-            src="./images/avatar.jpg"
-            alt="Profile picture"
-            class="avatar_img"
-          />
-          <p>FName SName</p>
-        </div>
-        <div class="profile_info2">
-          <p>Username: username123</p>
-          <p>Email: usergmail@gmail.com</p>
-        </div>
-        <div class="description">
-          This is the description part where the user describes himself.
-        </div>
-        <div class="btn">Statistics</div>
-      </div>
-
-      <div class="grid-container">
-        <div class="tableheader">Cover</div>
-        <div class="tableheader">Title</div>
-        <div class="tableheader">Author</div>
-        <div class="tableheader">Publisher</div>
-        <div class="tableheader">Status</div>
-        <div class="cover">
-          <div class="cardBook__container">
-            <img
-              src="./images/40121378.jpg"
-              alt="Atomic Habits - James Clear"
-            />
-          </div>
-        </div>
-        <div class="field">book_title</div>
-        <div class="field">book_author</div>
-        <div class="field">book_publisher</div>
-        <div class="field">user_status</div>
-        <div class="cover">
-          <div class="cardBook__container">
-            <img
-              src="./images/40121378.jpg"
-              alt="Atomic Habits - James Clear"
-            />
-          </div>
-        </div>
-        <div class="field">book_title</div>
-        <div class="field">book_author</div>
-        <div class="field">book_publisher</div>
-        <div class="field">user_status</div>
-      </div>
+<div class="page container">
+  <div class="profile">
+    <div class="profile_info">
+      <img src="./images/avatar.jpg" alt="Profile picture" class="avatar_img" />
+      <p>FName SName</p>
     </div>
-  </body>
-</html>
+    <div class="profile_info2">
+      <p>Username: username123</p>
+      <p>Email: usergmail@gmail.com</p>
+    </div>
+    <div class="description">
+      This is the description part where the user describes himself.
+    </div>
+    <div class="btn">Statistics</div>
+  </div>
+  <table id="user-books" onload="initializeUserBooks()">
+    <profile-book
+      href="something"
+      src="aoleo"
+      alt="Atomic Habits"
+    ></profile-book>
+  </table>
+</div>
+
+<!--  <div class="grid-container">-->
+<!--    <div class="tableheader">Cover</div>-->
+<!--    <div class="tableheader">Title</div>-->
+<!--    <div class="tableheader">Author</div>-->
+<!--    <div class="tableheader">Publisher</div>-->
+<!--    <div class="tableheader">Status</div>-->
+<!--    <div class="cover">-->
+<!--      <div class="cardBook__container">-->
+<!--        <img src="./images/40121378.jpg" alt="Atomic Habits - James Clear" />-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="field">book_title</div>-->
+<!--    <div class="field">book_author</div>-->
+<!--    <div class="field">book_publisher</div>-->
+<!--    <div class="field">user_status</div>-->
+<!--    <div class="cover">-->
+<!--      <div class="cardBook__container">-->
+<!--        <img src="./images/40121378.jpg" alt="Atomic Habits - James Clear" />-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="field">book_title</div>-->
+<!--    <div class="field">book_author</div>-->
+<!--    <div class="field">book_publisher</div>-->
+<!--    <div class="field">user_status</div>-->
+<!--  </div>-->

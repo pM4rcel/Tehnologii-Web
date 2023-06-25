@@ -1,16 +1,24 @@
 @use "./base/reset";
 @use "./components" as *;
 @use "./layout";
+@use "./pages/profile";
 
 body {
   min-height: 100vh;
   margin: 0;
   font-family: var(--font-site);
+  color: var(--clr-neutral-100);
+  overflow: hidden;
 }
 
 .container {
   padding: 0 2em;
   width: 90%;
+  margin: 0 auto;
+}
+
+.notFound {
+  align-self: center;
   margin: 0 auto;
 }
 
@@ -38,51 +46,54 @@ body {
 //  }
 //}
 //
-//.banner {
-//  $root: &;
-//  position: relative;
-//  min-height: calc(100vh - 56px);
-//  background: url("../images/banner.jpg");
-//  background-size: cover;
-//
-//  &::before {
-//    content: "";
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    right: 0;
-//    bottom: 0;
-//    z-index: 1;
-//    background-color: rgba(0, 0, 0, 35%);
-//    backdrop-filter: blur(1px) saturate(80%);
-//  }
-//
-//  & .container {
-//    z-index: 2;
-//    display: flex;
-//    #{ $root }__content {
-//      align-self: center;
-//    }
-//    #{ $root }__header {
-//      font-size: 2.25em;
-//      margin-bottom: 0;
-//    }
-//  }
-//
-//  .btn {
-//    text-decoration: none;
-//    width: fit-content;
-//    padding-left: 2em;
-//    padding-right: 2em;
-//
-//    &:hover {
-//      background-color: transparent;
-//      border-color: $neutral-color;
-//      color: $neutral-color;
-//    }
-//  }
-//}
-//
+.banner {
+  $root: &;
+  position: relative;
+  min-height: 100vh;
+  background: url("/static/resources/banner.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 45%);
+    backdrop-filter: blur(1px) saturate(80%);
+  }
+
+  & > .container {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    #{ $root }__content {
+      align-self: center;
+    }
+    #{ $root }__header {
+      font-size: 2.25em;
+      margin: 0;
+    }
+  }
+
+  .btn {
+    text-decoration: none;
+    width: fit-content;
+    padding-left: 2em;
+    padding-right: 2em;
+
+    &:hover {
+      background-color: transparent;
+      border-color: var(--clr-neutral-100);
+      color: var(--clr-neutral-100);
+    }
+  }
+}
+
 //@media (min-width: 400px) {
 //  .genresection {
 //    &__carousel {

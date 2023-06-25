@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ro" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width = device-width, initial-scale=1.0, user-scalable=yes"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://w3c.github.io/scholarly-html/css/scholarly.min.css"
+    />
+    <script src="https://w3c.github.io/scholarly-html/js/scholarly.min.js"></script>
+    <title>Boo - Scholarly Documentation</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="banner">
+        <img
+          style="width: 100%"
+          src="https://w3c.github.io/scholarly-html/scholarly-html.svg"
+          width="227"
+          height="50"
+          alt="Scholarly HTML logo"
+        />
+      </div>
+      <h1><project>Boo</project> Raport - Scholary HTML</h1>
+    </header>
+
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          <a href="https://github.com/CochiorDaniel" target="_blank"
+            >Cochior Daniel</a
+          >
+          <a href="https://github.com/cristiancristescu5" target="_blank"
+            >Cristescu Cristian</a
+          >
+          <a href="https://github.com/pM4rcel" target="_blank"
+            >Timofte Pavel Marcel</a
+          >
+        </dd>
+      </dl>
+    </div>
+
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        Acest document cuprinde aspectele tehnice si aspecte ale interactiunii
+        cu utilizatorul, ale proiectului Boo pentru <web>Tehnologii Web</web>,
+        realizat de
+        <a href="https://github.com/CochiorDaniel" target="_blank"
+          >Cochior Daniel</a
+        >,
+        <a href="https://github.com/cristiancristescu5" target="_blank"
+          >Cristescu Cristian</a
+        >
+        si
+        <a href="https://github.com/pM4rcel" target="_blank"
+          >Timofte Pavel Marcel</a
+        >
+        pentru Tehnologii Web (2023).
+        <br />
+        <br />
+        <infoiasi
+          ><i
+            >Universitatea Alexandru Ioan Cuza din Iasi, Facultatea de
+            Informatica</i
+          ></infoiasi
+        >
+      </p>
+    </section>
+
+    <!--Introducere-->
+
+    <section id="introduction" role="doc-introduction">
+      <h2>Introducere</h2>
+      <section id="purpose">
+        <h3>Scop</h3>
+        <p>
+          Aplicatia Web Boo, detaliata in acest document, creeaza un spatiu
+          pentru utilizator in care acesta poate avea acces la diferite carti.
+          Aceasta aplicatie permite specificarea progresului fiecarui utilizator
+          la citirea unei/unor carti si exprimarea opiniilor referitoare la
+          lecturile realizate de o persoane sau un grup de persoane. Aplicatia
+          realizeaza managementul cartilor parcurse de fiecare utilizator.
+        </p>
+      </section>
+
+      <section id="intended-audience">
+        <h3>Public tinta</h3>
+        <p>
+          In continuare, vom prezenta o descriere generala a aplizatiei, urmand
+          ca apoi sa fie detaliata interactiunea utilizatorului cu aceasta.
+          Acest document este destinat utilizatorului obisnuit, si vizeaza, in
+          special, principalele functionalitati ale aplicatiei si modul de
+          interactiune cu utilizatorul, pentru a facilita utilizarea aplicatiei.
+        </p>
+      </section>
+
+      <section id="scope">
+        <h3>Viziune</h3>
+        <p>
+          Aplicatia doreste sa faciliteze comunicarea dintre diferiti
+          utilizatori pasionati de citit, astfel creand un mediu de socializare
+          si impartasire a preferintelor fiecaruia. Aplicatia permite gruparea
+          volumelor in functie de gen, autor, editura si anul aparitiei ceea ce
+          faciliteaza gestionarea preferintelor fiecarui utilizator. De
+          asemenea, sunt puse la dispozitie statisitici pentru a avea o
+          perspectiva mai buna asupra tendintelor actuale.
+        </p>
+      </section>
+    </section>
+    <!-- description-->
+    <section id="description" role="doc-introduction">
+      <h2>Descriere</h2>
+      <section id="perspective">
+        <h3>Perspectiva</h3>
+        <p>
+          Aplicatia vine cu o gama larga de carti si volume, ce poate satisface
+          preferintele, in materie de gen, ale fiecarui utilizator, iar fiecare
+          utilizator isi poate gestiona propria colectie de carti, adaugand
+          review-uri, rating-uri si comentarii la review-urile altor
+          utilizatori. Mai mult, utilizatorii pot crea grupuri prin care sa
+          interactioneze cu alti utilizatori, pentru o experienta cat mai
+          placuta.
+        </p>
+      </section>
+
+      <section id="functions">
+        <p>Mai jos sunt functionalitatile pe care aplicatia Boo vi le ofera.</p>
+
+        <ul>
+          <li>Crearea unui cont si inregistrarea unui utilizator</li>
+          <li>Modificarea datelor asociate utilizatorului</li>
+          <li>Adaugarea unui rating unei anumite carti</li>
+          <li>Alaturarea unui grup</li>
+          <li>Vizualizarea statisticlor asociate unui anumit grup</li>
+          <li>Ofera utilizatorului un management al cartilor parcurse</li>
+          <li>Oferirea de statisitici in format CSV si DocBook</li>
+        </ul>
+      </section>
+
+      <section id="operarting-environment">
+        <h3>Mediul de operare</h3>
+        <p>
+          Fiind o aplicatie web, ea va rula pe orice browser modern. Astfel
+          aplicatia va putea rula pe toate sistemele de operare ce suporta un
+          browser cum ar fi: Android, IOS, Windows, Linux, etc.
+        </p>
+      </section>
+    </section>
+
+    <section id="interfaces">
+      <h2>Interfete externe</h2>
+      <section id="user-interfaces">
+        <h3>Interfata pentru utilizator</h3>
+        <p>
+          Aplicatia ofera o interfata moderna, placuta din punct de vedere
+          vizual pentru a imbunatati experienta utilizatorului. Boo poate fi
+          folosita atat pe ecrane mari cat si pe browser-ul telefonului al carui
+          ecran este de dimensiuni mai reduse, oferind in continuare o
+          experienta placuta utilizatorului datorita design-ului responsive.
+        </p>
+      </section>
+    </section>
+    <section id="software-interface">
+      <h3>Interfete software</h3>
+      <p>
+        Aplicatia este in stransa legatura cu REST API-ul propriu. Informatiile
+        sunt interceptate de client folosind FETCH API care asigura primirea
+        datelor de la server si trimiterea de cereri la anumite endpoint-uri
+        oferite de server.
+      </p>
+      <p>
+        Baza de date folosita este PostreSQL deoarece se poate integra usor cu
+        limbajul de programare folosit pe partea de backend. Pentru conexiunea
+        la baza de date a fost folosit Persistence API.
+      </p>
+      <p>
+        Design-ul arhitectural al aplicatiei este MVC(Model - View - Controller)
+        pentru a modulariza aplicatia si a usura scrierea de cod. Partea de
+        Model este asociata partii de server, claselor de tip Repository care
+        modeleaza datele si asigura comunicarea cu baza de date si a claselor de
+        tip Service care utilizeaza repository-urile pentru prelucrarea datelor.
+        Partea de View este asociata tot server-ului, si este reprezentata de
+        modul in care reprezentam datele si modul in care le trimitem. Datele
+        sunt reprezentate de clasele de tip entitate care reflecta tabelele
+        bazei de date. Datele trimise de server catre clienti sunt in format
+        JSON. Partea de Controller este reprezentata de clasele care contin
+        "Controller" in nume ce extind clasa abstracta HttpServlet. Acestea
+        preiau datele din request-urile clientilor, le prelucreaza folosindu-se
+        de clasele Service si apoi genreaza raspunsuri corespunzatoare cu
+        cerererile clientilor.
+      </p>
+
+      <p>
+        Frontend-ul este scris in HTML5, CSS3 si Javascript fara a folosi alte
+        librarii.
+      </p>
+
+      <p>
+        Pentru backend se va folosi JavaEE, HttpServlet, Persistence API si
+        Apache Tomcat. HttpServlet este folosit pentru a crea controller-ele si
+        pentru a primi si trimite raspunsuri catre clienti. Persistence API este
+        folosit pentru a usura conectarea la baza de date si comunicarea cu
+        aceasta. Apache Tomcat este un container ce ofera suport pentru rularea
+        si administrarea ciclului de viata al Servlet-urilor.
+      </p>
+    </section>
+    <section id="system-diagrams">
+      <h3>Diagramele C4 ale aplicatiei</h3>
+      <br />
+      <figure>
+        <img
+          style="width: 100%"
+          src="./C4_level1.png"
+          alt="C4-level1"
+        />
+        <figcaption>Diagrama C4 nivel 1</figcaption>
+      </figure>
+      <br />
+      <figure>
+        <img
+          style="width: 100%"
+          src="./C4_level2.png"
+          alt="C4-level2"
+        />
+        <figcaption>Diagram C4 nivel 2</figcaption>
+      </figure>
+      <br />
+      <figure>
+        <img
+          style="width: 100%"
+          src="./C4_level3.png"
+          alt="C4-level3"
+        />
+        <figcaption>Diagrama C4 nivel 3</figcaption>
+      </figure>
+      <br />
+      <figure>
+        <img
+          style="width: 100%"
+          src="./C4-level4_database_diagram.png"
+          alt="C4-level4"
+        />
+        <figcaption>Diagrama C4 nivel 4</figcaption>
+      </figure>
+    </section>
+
+    <section id="source-code">
+      <h2>Gestionarea codului</h2>
+      <p>
+        Pentru gestionarea codului sursa a proiectului s-a folosit
+        <a href="https://github.com" target="_blank">GitHub</a>. Commit-urile
+        sunt realizate de toti membrii echipei, pentru ca fiecare membru a
+        lucrat la feature-uri diferite, deci nu a fost necesara folosirea de
+        branch-uri multiple.
+      </p>
+
+      <p>
+        Codul sursa al proiectului va fi disponibil
+        <a href="https://github.com/pM4rcel/Tehnologii-Web" target="_blank"
+          >aici</a
+        >.
+      </p>
+    </section>
+
+    <section id="system-features">
+      <h2>Functionalitati</h2>
+      <section id="login">
+        <h3>Autentificare</h3>
+        <p>
+          Autentificarea utilizatorului se realizeaza in pagina dedicata aceste
+          operatii si presupune completarea campurilor necesare (email, parola)
+          urmand ca apoi utilizatorul sa apese pe butonul "login" si, in cazul
+          in care datele sunt corecte, acesta va fi redirectionat pe pagina
+          principala (Home). Desigur, autentificarea necesita existenta unui
+          cont de utilizator.
+        </p>
+      </section>
+      <section id="register">
+        <h3>Inregistrarea</h3>
+        <p>
+          Aceasta operatie presupune crearea unui nou cont de utilizator.
+          Utilizatorul completeaza campurile necesare (nume, prenume, email si
+          parola), apasa pe butonul "register" si, in cazul in care informatiile
+          sunt valide (email-ul este nou si respecta formatul standard, parola
+          corespunde), un nou cont de utilizator va fi creat.
+        </p>
+      </section>
+      <section id="authorization">
+        <h3>Autorizare</h3>
+        <p>
+          Aceasta operatie presupune crearea unui JWT(JSON web token) la login
+          ce va stoca email-ul utilizatorului, acest token fiind inclus intr-un
+          cookie. Acesta are scopul de a identifica utilizatorul atunci cand
+          acceseaza anumite endpoint-uri. Aceasta autentificare se realizeaza
+          prin intermediul unui filtru de securitate.
+        </p>
+      </section>
+
+      <section id="books">
+        <h3>Vizualizarea cartilor</h3>
+        <p>
+          Utilizatorul va putea vedea pe pagina home, cartile puse la dispozitie
+          de aplicatie. Fiecare carte din lista va contine informatii despre
+          aceasta (autor, rating, etc.). Utilizatorul poatea adauga carti in
+          sectiune "MyBooks" a profilului, fiecare carte avand asociat un
+          status(Want to read, Finished, Currently reading). Rating-ul unei
+          carti poate fi adaugat din pagina "Home", acordandu-i un rating intre
+          o stea si 5 stele.
+        </p>
+      </section>
+
+      <section id="user-settings">
+        <h3>Setarile Utilizatorului</h3>
+        <p>
+          Utilizatorul va putea accesa din pagina "My profile" setari asociate
+          contului sau. Astfel, el va putea schimba parola, modifica mail-ul si
+          alte informatii referitoare la contul personal. Tot in aceasta pagina,
+          utilizatorul va putea vizualiza si modifica lista sa de carti
+          (statusul ficarei carti, rating-ul acordat, etc.).
+        </p>
+      </section>
+      <section id="reviews">
+        <h3>Adaugarea de review-uri si comentarii la review-uri</h3>
+        <p>
+          Odata inregistrat in aplicatie, utilizatorul poate lasa review-uri la
+          carti si de asemenea poate interactiona cu review-urile celorlalti
+          utilizatori lasand comentarii la acestea.
+        </p>
+      </section>
+
+      <section id="groups">
+        <h3>Crearea si alaturarea unui grup</h3>
+        <p>
+          Odata ce un utilizator isi creeaza un cont, este autentificat si
+          autorizat in aplicatie, acesta are posibilitatea de a crea grupuri,
+          dar si de a se alatura unui grup. Aceasta functionalitate ofera
+          utilizatorilor un mediu unde pot impartasi propriile preferinte cu
+          alti utilizatori, dar si un mod de a descoperi noi preferinte in
+          materie de carti.
+        </p>
+      </section>
+
+      <section id="security">
+        <h3>Securitatea datelor</h3>
+        <p>
+          Securitatea datelor este asigurata de algoritmul de criptare folosit
+          pentru a codifica parolele pe 128 de biti, parolele avand o lungiem
+          minima de 16 caractere.
+        </p>
+      </section>
+    </section>
+
+    <section id="user-interface" role="doc-introduction">
+      <h2>Interfata si Motivatie</h2>
+      <p>
+        Interfata aplicatiei este simpla si in acelasi timp moderna deoarece
+        contine concepte curente cum ar fi: colturi rotunjite, folosirea
+        fontului Sans Sherif, etc., elemente menite sa atraga utilizatorul.
+        <a
+          href="https://www.figma.com/file/i7e3LqrENkyVZqOHYXV9yQ/Web-Technologies?node-id=1%3A2&t=NJ7tRmYAdK00exlY-1"
+          target="_blank"
+          >Aici</a
+        >
+        pote fi vizualizat design-ul site-ului.
+      </p>
+
+      <p>
+        Pentru crearea layout-ului, fiecare pagina s-a structurat folosind grid
+        si flex deoarece se poate construi foarte usor interfete, cat si
+        faciliteaza alinierea elementelor interne. Pentru tema s-au folosit
+        diferite nuante progresive de crem cu accente de roz, cat si nunate de
+        gri neutre. De asemenea, pentru a avea un singur loc in care sunt puse
+        culori, au fost create variabile css.
+      </p>
+
+      <p>
+        Aplicatia este responsive, ea putand fi disponibila si pe telefonul
+        mobil.
+      </p>
+      <p>
+        Foile de still css au fost modularizate pentru scalabilitate, fiecare
+        fisier css reprezinta un singur obiect/layout, astfel o modificare(de
+        exemplu la un buton) se face intr-un fisier iar modificarile se propaga
+        oriunde este folosit acel fisier. De asemenea, pentru a avea un singur
+        loc in care sunt puse dimensiuni/culori au fost create variabile css.
+      </p>
+    </section>
+
+    <section id="other-resources">
+      <h2>Resurse principale</h2>
+      <ul>
+        <li>
+          https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html -
+          Cursul de Tehnologii Web predat de domnul profesor Sabin Corneliu
+          Buraga.
+        </li>
+        <li>https://dribbble.com - Idei pentru design</li>
+        <li>https://www.figma.com - Tool pentru conceperea design-ului</li>
+        <li>https://sass-lang.com/documentation/ - Documentatie Sass</li>
+        <li>https://www.w3schools.com/html/html_css.asp</li>
+        <li>
+          https://www.youtube.com/watch?v=Oive66jrwBs&ab_channel=TraversyMedia
+        </li>
+        <li>https://youtu.be/BZi44GOD8kY</li>
+        <li>https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</li>
+        <li>https://profs.info.uaic.ro/~acf/tj/slides/servlets_slide_en.pdf</li>
+      </ul>
+    </section>
+  </body>
+</html>

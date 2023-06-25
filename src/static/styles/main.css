@@ -220,6 +220,7 @@ footer {
 header {
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary-500);
+  z-index: 10;
 }
 header > div {
   display: flex;
@@ -232,19 +233,23 @@ header > div {
   font-size: 2em;
   margin: 0;
   text-decoration: none;
+  z-index: 10;
 }
 
 .nav {
-  color: var(--clr-neutral-100);
   font-size: 1.25em;
   display: flex;
-  max-height: 56px;
+  max-height: 3.5em;
+  z-index: 10;
 }
 .nav__linkslist {
-  display: none;
+  display: flex;
+  padding: 0;
   margin: 0;
   list-style: none;
+  align-items: center;
   height: 100%;
+  transition: display 300ms ease-in-out;
 }
 .nav__linkslist .nav__link {
   cursor: pointer;
@@ -255,12 +260,9 @@ header > div {
   background-color: transparent;
   transition: background-color 200ms ease-in-out;
 }
-.nav__linkslist .nav__link > a {
+.nav__linkslist .nav__link a {
   text-decoration: none;
   color: inherit;
-}
-.nav__linkslist .nav__link--active {
-  font-weight: 700;
 }
 .nav__linkslist .nav__link:hover {
   background-color: var(--clr-primary-800);
@@ -278,24 +280,90 @@ header > div {
      object-fit: cover;
 }
 
+.nav__toggle {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 2.5em;
+  height: 1.7em;
+  align-self: center;
+  z-index: 10;
+}
+.nav__toggle > input {
+  display: none;
+}
+.nav__toggle > input:checked + span i:not(.line) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.nav__toggle > input:checked + span i:last-of-type {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.nav__toggle > input:checked + span i:first-of-type {
+  background-color: transparent;
+}
+.nav__toggle i {
+  display: block;
+  background-color: var(--clr-neutral-100);
+  width: 100%;
+  height: 0.3em;
+  border-radius: 0.2em;
+}
+.nav__toggle i:not(.line) {
+  position: relative;
+  transition: transform 100ms ease-out, top 100ms ease-out;
+}
+.nav__toggle i.line {
+  position: absolute;
+}
+.nav__toggle i.line:first-of-type {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 20ms ease-out;
+}
+.nav__toggle i.line:last-of-type {
+  bottom: 0;
+  transition: top 200ms ease-out, transform 200ms ease-out;
+}
+
+@media (max-width: 719px) {
+  .nav {
+    position: absolute;
+    height: 0;
+    top: calc(-2.7em - 100vh);
+    right: 0;
+    left: 0;
+    transition: top 300ms ease-in-out;
+  }
+  .nav__linkslist {
+    width: 100vw;
+    min-height: calc(100vh - 2.7rem);
+    background-color: var(--clr-primary-500);
+    flex-direction: column;
+    align-items: center;
+  }
+}
 @media (min-width: 720px) {
   .nav {
     flex-direction: row;
   }
-  .nav__linkslist {
-    display: flex;
-    align-items: center;
+  .nav__toggle {
+    display: none;
   }
 }
-.background {
+.fullPage {
   position: relative;
-  background: url("/static/resources/bookshelf.jpg") no-repeat;
   background-size: cover;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   padding: 2em 1.5em;
   display: flex;
   min-height: calc(100vh - 2.7em);
+}
+
+.background {
+  background: url("/static/resources/bookshelf.jpg") no-repeat;
 }
 @media (min-width: 720px) {
   .background {
@@ -341,14 +409,150 @@ header > div {
   font-size: 0.75em;
 }
 
+.page {
+  display: flex;
+  padding: 2em;
+  gap: 3em;
+}
+.page > .profile {
+  background-color: #f5f5f5;
+  width: 20em;
+  height: 40em;
+}
+.page > .profile > .profile_info {
+  color: #583c3c;
+  left: 10%;
+  text-align: center;
+  padding: 2em 2em 0em 2em;
+  font-weight: 1000;
+  font-size: 1em;
+}
+.page > .profile > .profile_info > .avatar_img {
+  width: 15em;
+  height: 15em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.page > .profile > .profile_info2 {
+  color: #583c3c;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1em;
+  padding: 1em 2em 0em 2em;
+}
+.page > .profile > .description {
+  color: #583c3c;
+  text-align: left;
+  padding: 2em;
+  font-size: 0.8em;
+}
+.page > .profile > .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  left: 4em;
+  background-color: #583c3c;
+  color: #f5f5f5;
+}
+.page > .profile > .btn:hover {
+  background-color: transparent;
+  border-color: #583c3c;
+  color: #583c3c;
+}
+.page .grid-container {
+  display: grid;
+  background-color: #f5f5f5;
+  grid-template-rows: 50px 300px 300px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-auto-rows: 300px;
+}
+.page .grid-container > .tableheader {
+  background-color: #c5ad99;
+  text-align: center;
+  color: #f5f5f5;
+  font-weight: 700;
+  font-size: 1.6em;
+  padding: 0.3em;
+}
+.page .grid-container > .cover {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 1em;
+}
+.page .grid-container > .field {
+  background-color: #f5f5f5;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #583c3c;
+  font-weight: 700;
+  font-size: 1.2em;
+  padding: 5em;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
   font-family: var(--font-site);
+  color: var(--clr-neutral-100);
+  overflow: hidden;
 }
 
 .container {
   padding: 0 2em;
   width: 90%;
   margin: 0 auto;
+}
+
+.notFound {
+  align-self: center;
+  margin: 0 auto;
+}
+
+.banner {
+  position: relative;
+  min-height: 100vh;
+  background: url("/static/resources/banner.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(1px) saturate(80%);
+          backdrop-filter: blur(1px) saturate(80%);
+}
+.banner > .container {
+  position: relative;
+  z-index: 4;
+  display: flex;
+}
+.banner > .container .banner__content {
+  align-self: center;
+}
+.banner > .container .banner__header {
+  font-size: 2.25em;
+  margin: 0;
+}
+.banner .btn {
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.banner .btn:hover {
+  background-color: transparent;
+  border-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-100);
 }/*# sourceMappingURL=main.css.map */
