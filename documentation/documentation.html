@@ -181,11 +181,11 @@
         Baza de date folosita este PostgreSQL deoarece se poate integra usor cu
         limbajul de programare folosit pe partea de backend. Pentru conexiunea
         la baza de date s-a folosit HikariCP si JDBC.<br>
-        HikariCP este o librărie Java, folosita pentru gestionarea eficientă a conexiunilor JDBC 
-        către baza de date. Aceasta implementează un sistem de connection pools, care 
-        permite aplicațiilor să utilizeze și să partajeze conexiuni pre-stabilite către baza de date, 
-        în loc să creeze o nouă conexiune pentru fiecare operațiune. Acest lucru ajută la reducerea 
-        timpului și resurselor necesare pentru stabilirea conexiunilor și îmbunătățește performanța aplicației.
+        HikariCP este o librarie Java, folosita pentru gestionarea eficienta a conexiunilor JDBC 
+        catre baza de date. Aceasta implementeaza un sistem de connection pools, care 
+        permite aplicatiilor sa utilizeze si sa partajeze conexiuni pre-stabilite catre baza de date, 
+        in loc sa creeze o noua conexiune pentru fiecare operatiune. Acest lucru ajuta la reducerea 
+        timpului si resurselor necesare pentru stabilirea conexiunilor si imbunatateste performanta aplicatiei.
       </p>
     </section>
       <section id="Design-ul">
@@ -210,25 +210,25 @@
       <section id="Frontend-ul">
         <h3>Frontend-ul</h3>
       <p>
-        Frontend-ul este scris în HTML5, CSS3 și JavaScript, fără a se folosi alte librării. 
-        Prin utilizarea directă a acestor limbaje, se obține un control mai mare asupra codului și o mai mare 
-        flexibilitate în crearea interfețelor utilizator. De asemenea, acest mod de abordare poate contribui
-        la performanța și încărcarea rapidă a paginilor, deoarece nu sunt implicate procese suplimentare de gestionare 
-        și încărcare a librăriilor externe.
+        Frontend-ul este scris in HTML5, CSS3 si JavaScript, fara a se folosi alte librarii. 
+        Prin utilizarea directa a acestor limbaje, se obtine un control mai mare asupra codului si o mai mare 
+        flexibilitate in crearea interfetelor utilizator. De asemenea, acest mod de abordare poate contribui
+        la performanta si incarcarea rapida a paginilor, deoarece nu sunt implicate procese suplimentare de gestionare 
+        si incarcare a librariilor externe.
       </p>
     </section>
       <section id="Backend-ul">
         <h3>Backend-ul</h3>
       <p>
-        Pentru backend, s-a folosi JavaEE, HttpServlet, HikariCP și Apache Tomcat. <br>
-        HttpServlet este utilizat pentru a crea controlerele și pentru a primi și trimite răspunsuri către clienți.<br> 
-        HikariCP este o librărie de bază pentru gestionarea conexiunilor JDBC și oferă un connection pool eficient pentru interacțiunea
-        cu baza de date. Aceasta facilitează conectarea și comunicarea cu baza de date, asigurând performanță și scalabilitate în aplicație.<br>
-        Apache Tomcat este un container care oferă suport pentru rularea și administrarea ciclului de viață al servleturilor.
-        Acesta asigură gestionarea cererilor HTTP, procesarea și trimiterea răspunsurilor către clienți.
-        Tomcat permite aplicației să ruleze pe server și să fie accesibilă prin HTTP.<br>
-        Astfel, prin utilizarea JavaEE, HttpServlet și HikariCP împreună cu Apache Tomcat, se construiește un mediu robust
-        și eficient pentru dezvoltarea backend-ului aplicației. 
+        Pentru backend, s-a folosi JavaEE, HttpServlet, HikariCP si Apache Tomcat. <br>
+        HttpServlet este utilizat pentru a crea controlerele si pentru a primi si trimite raspunsuri catre clienti.<br> 
+        HikariCP este o librarie de baza pentru gestionarea conexiunilor JDBC si ofera un connection pool eficient pentru interactiunea
+        cu baza de date. Aceasta faciliteaza conectarea si comunicarea cu baza de date, asigurand performanta si scalabilitate in aplicatie.<br>
+        Apache Tomcat este un container care ofera suport pentru rularea si administrarea ciclului de viata al servleturilor.
+        Acesta asigura gestionarea cererilor HTTP, procesarea si trimiterea raspunsurilor catre clienti.
+        Tomcat permite aplicatiei sa ruleze pe server si sa fie accesibila prin HTTP.<br>
+        Astfel, prin utilizarea JavaEE, HttpServlet si HikariCP impreuna cu Apache Tomcat, se construieste un mediu robust
+        si eficient pentru dezvoltarea backend-ului aplicatiei. 
       </p>
     </section>
     </section>
@@ -402,10 +402,10 @@
       </p>
 
       <p>
-        Aplicația este concepută într-un mod responsive, ceea ce înseamnă că poate fi accesată
-         și utilizată pe diverse dispozitive, inclusiv pe telefoanele mobile. Design-ul și 
-         structura aplicației au fost optimizate astfel încât să ofere o experiență plăcută și 
-         funcțională indiferent de dimensiunea ecranului pe care este afișată.
+        Aplicatia este conceputa intr-un mod responsive, ceea ce inseamna ca poate fi accesata
+         si utilizata pe diverse dispozitive, inclusiv pe telefoanele mobile. Design-ul si 
+         structura aplicatiei au fost optimizate astfel incat sa ofere o experienta placuta si 
+         functionala indiferent de dimensiunea ecranului pe care este afisata.
       </p>
       <p>
         Foile de still css au fost modularizate pentru scalabilitate, fiecare
@@ -427,16 +427,16 @@
             src="./criptClass.png"
             alt="criptClass"
           />
-          <figcaption>Clasa responsabilă de criptarea și decriptarea parolelor</figcaption>
+          <figcaption>Clasa responsabila de criptarea si decriptarea parolelor</figcaption>
           <p>
-          Folosind algoritmul AES (Advanced Encryption Standard). Aceasta oferă două metode statice:
-          encryptString și decryptString, care permit criptarea și decriptarea unui string respectiv a parolei.<br>
+          Folosind algoritmul AES (Advanced Encryption Standard). Aceasta ofera doua metode statice:
+          encryptString si decryptString, care permit criptarea si decriptarea unui string respectiv a parolei.<br>
 
-          Metoda encryptString: primește un string ca parametru, care reprezintă textul pe care dorim să-l criptăm.
-          Rezultatul criptării este codificat în Base64 și returnat ca un string criptat cu algoritmul "AES" si cheia secretă SECRET_KEY.<br>
+          Metoda encryptString: primeste un string ca parametru, care reprezinta textul pe care dorim sa-l criptam.
+          Rezultatul criptarii este codificat in Base64 si returnat ca un string criptat cu algoritmul "AES" si cheia secreta SECRET_KEY.<br>
 
-          Metoda decryptString: primește un string "ciphertext" ca parametru, care reprezintă textul criptat pe care dorim să-l decriptăm.
-          Rezultatul decriptării este returnat ca un string reprezentând textul inițial, folosind algoritmul "AES" și cheia secretă SECRET_KEY.
+          Metoda decryptString: primeste un string "ciphertext" ca parametru, care reprezinta textul criptat pe care dorim sa-l decriptam.
+          Rezultatul decriptarii este returnat ca un string reprezentand textul initial, folosind algoritmul "AES" si cheia secreta SECRET_KEY.
           </p>
         </figure>
         <br />
@@ -451,17 +451,17 @@
             src="./dbClass.png"
             alt="dbClass"
           />
-          <figcaption>Clasa responsabilă de conexiunea la baza de date</figcaption>
+          <figcaption>Clasa responsabila de conexiunea la baza de date</figcaption>
           <p>
-            Clasa DataBase este responsabilă de gestionarea conexiunii la baza de date folosind HikariCP, 
-            o bibliotecă Java pentru pool-ul de conexiuni JDBC. Aceasta furnizează metode pentru obținerea 
-            unei conexiuni la baza de date și închiderea conexiunii. Aceasta implementeaza design pattern-ul Singleton 
+            Clasa DataBase este responsabila de gestionarea conexiunii la baza de date folosind HikariCP, 
+            o biblioteca Java pentru pool-ul de conexiuni JDBC. Aceasta furnizeaza metode pentru obtinerea 
+            unei conexiuni la baza de date si inchiderea conexiunii. Aceasta implementeaza design pattern-ul Singleton 
             pentru a asigura o singura instanta a bazei de date.<br>
             <ul>
-            <li>Metoda getConnection() returnează o conexiune la baza de date utilizând dataSource.</li>
-            <li>Metoda getDataSource() returnează un obiect HikariDataSource configurat cu parametrii specificați.</li>
-            <li>Metoda closeConnection() închide conexiunea curentă la baza de date obținută din dataSource.</li>
-            <li>Metoda rollBack() efectuează o operațiune de rollback pe conexiunea curentă la baza de date obținută din dataSource.</li>
+            <li>Metoda getConnection() returneaza o conexiune la baza de date utilizand dataSource.</li>
+            <li>Metoda getDataSource() returneaza un obiect HikariDataSource configurat cu parametrii specificati.</li>
+            <li>Metoda closeConnection() inchide conexiunea curenta la baza de date obtinuta din dataSource.</li>
+            <li>Metoda rollBack() efectueaza o operatiune de rollback pe conexiunea curenta la baza de date obtinuta din dataSource.</li>
             </ul>
           </p>
         </figure>
@@ -484,14 +484,14 @@
           /> -->
           <figcaption>Clasa responsponsabila de filtrarea userilor</figcaption>
           <p>
-            Clasa AuthenticationFilter este un filtru care implementează interfața Filter și este utilizată pentru a asigura
-            autentificarea și autorizarea utilizatorilor în aplicație. Acest filtru este configurat prin adnotarea @WebFilter și
+            Clasa AuthenticationFilter este un filtru care implementeaza interfata Filter si este utilizata pentru a asigura
+            autentificarea si autorizarea utilizatorilor in aplicatie. Acest filtru este configurat prin adnotarea @WebFilter si
             este aplicat pentru toate cererile primite de la client.<br>
-            Aceasta clasa contine metoda doFilter() care proceseaza cererile primite. În funcție de metoda HTTP și calea cererii,
-            acest filtru verifică autentificarea utilizatorului prin intermediul unui token stocat într-un cookie denumit "sessionId".
-            Token-ul este decodificat și verificat pentru a valida semnătura token-ului.<br>
-            Dacă token-ul este valid și utilizatorul asociat acestuia există în sistem, filtrul autorizeaza userul pentru a accesa resursa solicitată.
-            În caz contrar, filtrul returnează un cod de stare HTTP 401 (Unauthorized), indicând că utilizatorul nu are drepturi de acces necesare pentru a accesa resursa solicitată.
+            Aceasta clasa contine metoda doFilter() care proceseaza cererile primite. in functie de metoda HTTP si calea cererii,
+            acest filtru verifica autentificarea utilizatorului prin intermediul unui token stocat intr-un cookie denumit "sessionId".
+            Token-ul este decodificat si verificat pentru a valida semnatura token-ului.<br>
+            Daca token-ul este valid si utilizatorul asociat acestuia exista in sistem, filtrul autorizeaza userul pentru a accesa resursa solicitata.
+            in caz contrar, filtrul returneaza un cod de stare HTTP 401 (Unauthorized), indicand ca utilizatorul nu are drepturi de acces necesare pentru a accesa resursa solicitata.
           </p>
         </figure>
         <br />
@@ -508,8 +508,8 @@
           />
           <figcaption>Clasa de tip Entity</figcaption>
           <p>
-            Reprezintă o clasă care mapează o entitate din baza de date. Aceasta poate conține proprietăți
-            corespunzătoare coloanelor tabelei și oferă o modalitate de a interacționa cu datele din tabel.
+            Reprezinta o clasa care mapeaza o entitate din baza de date. Aceasta poate contine proprietati
+            corespunzatoare coloanelor tabelei si ofera o modalitate de a interactiona cu datele din tabel.
           </p>
         </figure>
         <figure>
@@ -520,9 +520,9 @@
           />
           <figcaption>Clasa de tip Repository</figcaption>
           <p>
-           Este responsabila cu comunicarea cu baza de date. Acesta ofera metode pentru a realiza operații de baza, cum ar fi crearea,
-           citirea, actualizarea și ștergerea (CRUD) asupra entităților. Repository-ul facilitează abstractizarea detaliilor specifice
-           bazei de date și oferă o interfață simplă pentru interacțiunea cu datele. Abstractizarea este data de implementarea
+           Este responsabila cu comunicarea cu baza de date. Acesta ofera metode pentru a realiza operatii de baza, cum ar fi crearea,
+           citirea, actualizarea si stergerea (CRUD) asupra entitatilor. Repository-ul faciliteaza abstractizarea detaliilor specifice
+           bazei de date si ofera o interfata simpla pentru interactiunea cu datele. Abstractizarea este data de implementarea
            metodelor care contin query-uri SQL si care returneaza obiecte de tipul entitate.
           </p>
         </figure>
@@ -534,7 +534,7 @@
           />
           <figcaption>Clasa de tip Service</figcaption>
           <p>
-            Service-ul folosește repository-ul pentru a accesa și manipula datele pentru a implementa logica necesara aplicatiei.
+            Service-ul foloseste repository-ul pentru a accesa si manipula datele pentru a implementa logica necesara aplicatiei.
           </p>
         </figure>
         <figure>
@@ -545,8 +545,8 @@
           />
           <figcaption>Clasa de tip Controller</figcaption>
           <p>
-            Aceasta oferă un punct de intrare în aplicație pentru cererile primite de la clienti. Controller-ul primește cererea,
-            apelează serviciul corespunzător și returnează răspunsul către client, gestionand rutele și parametrii cererii.
+            Aceasta ofera un punct de intrare in aplicatie pentru cererile primite de la clienti. Controller-ul primeste cererea,
+            apeleaza serviciul corespunzator si returneaza raspunsul catre client, gestionand rutele si parametrii cererii.
           </p>
         </figure>
         <br />
