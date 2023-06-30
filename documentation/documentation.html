@@ -85,7 +85,7 @@
           pentru utilizator in care acesta poate avea acces la diferite carti.
           Aceasta aplicatie permite specificarea progresului fiecarui utilizator
           la citirea unei/unor carti si exprimarea opiniilor referitoare la
-          lecturile realizate de o persoane sau un grup de persoane. Aplicatia
+          lecturile realizate de o persoana sau un grup de persoane. Aplicatia
           realizeaza managementul cartilor parcurse de fiecare utilizator.
         </p>
       </section>
@@ -138,9 +138,11 @@
           <li>Modificarea datelor asociate utilizatorului</li>
           <li>Adaugarea unui rating unei anumite carti</li>
           <li>Alaturarea unui grup</li>
-          <li>Vizualizarea statisticlor asociate unui anumit grup</li>
+          <li>Vizualizarea de diferite statistici </li>
           <li>Ofera utilizatorului un management al cartilor parcurse</li>
           <li>Oferirea de statisitici in format CSV si DocBook</li>
+          <li>Adaugarea de review-uri si comentarii la review-uri</li>
+          <li>Gestionarea statusurilor cartilor</li>
         </ul>
       </section>
 
@@ -156,8 +158,6 @@
 
     <section id="interfaces">
       <h2>Interfete externe</h2>
-      <section id="user-interfaces">
-        <h3>Interfata pentru utilizator</h3>
         <p>
           Aplicatia ofera o interfata moderna, placuta din punct de vedere
           vizual pentru a imbunatati experienta utilizatorului. Boo poate fi
@@ -165,21 +165,31 @@
           ecran este de dimensiuni mai reduse, oferind in continuare o
           experienta placuta utilizatorului datorita design-ului responsive.
         </p>
-      </section>
     </section>
     <section id="software-interface">
-      <h3>Interfete software</h3>
+      <h2>Interfete software</h2>
       <p>
         Aplicatia este in stransa legatura cu REST API-ul propriu. Informatiile
         sunt interceptate de client folosind FETCH API care asigura primirea
         datelor de la server si trimiterea de cereri la anumite endpoint-uri
         oferite de server.
       </p>
-      <p>
-        Baza de date folosita este PostreSQL deoarece se poate integra usor cu
+      
+        <section id="Baza de date">
+          <h3>Baza de date si conexiunea la aceasta</h3>
+        <p>
+        Baza de date folosita este PostgreSQL deoarece se poate integra usor cu
         limbajul de programare folosit pe partea de backend. Pentru conexiunea
-        la baza de date a fost folosit Persistence API.
+        la baza de date s-a folosit HikariCP si JDBC.<br>
+        HikariCP este o librărie Java, folosita pentru gestionarea eficientă a conexiunilor JDBC 
+        către baza de date. Aceasta implementează un sistem de connection pools, care 
+        permite aplicațiilor să utilizeze și să partajeze conexiuni pre-stabilite către baza de date, 
+        în loc să creeze o nouă conexiune pentru fiecare operațiune. Acest lucru ajută la reducerea 
+        timpului și resurselor necesare pentru stabilirea conexiunilor și îmbunătățește performanța aplicației.
       </p>
+    </section>
+      <section id="Design-ul">
+        <h3>Design-ul arhitectural</h3>
       <p>
         Design-ul arhitectural al aplicatiei este MVC(Model - View - Controller)
         pentru a modulariza aplicatia si a usura scrierea de cod. Partea de
@@ -196,20 +206,31 @@
         de clasele Service si apoi genreaza raspunsuri corespunzatoare cu
         cerererile clientilor.
       </p>
-
+    </section>
+      <section id="Frontend-ul">
+        <h3>Frontend-ul</h3>
       <p>
-        Frontend-ul este scris in HTML5, CSS3 si Javascript fara a folosi alte
-        librarii.
+        Frontend-ul este scris în HTML5, CSS3 și JavaScript, fără a se folosi alte librării. 
+        Prin utilizarea directă a acestor limbaje, se obține un control mai mare asupra codului și o mai mare 
+        flexibilitate în crearea interfețelor utilizator. De asemenea, acest mod de abordare poate contribui
+        la performanța și încărcarea rapidă a paginilor, deoarece nu sunt implicate procese suplimentare de gestionare 
+        și încărcare a librăriilor externe.
       </p>
-
+    </section>
+      <section id="Backend-ul">
+        <h3>Backend-ul</h3>
       <p>
-        Pentru backend se va folosi JavaEE, HttpServlet, Persistence API si
-        Apache Tomcat. HttpServlet este folosit pentru a crea controller-ele si
-        pentru a primi si trimite raspunsuri catre clienti. Persistence API este
-        folosit pentru a usura conectarea la baza de date si comunicarea cu
-        aceasta. Apache Tomcat este un container ce ofera suport pentru rularea
-        si administrarea ciclului de viata al Servlet-urilor.
+        Pentru backend, s-a folosi JavaEE, HttpServlet, HikariCP și Apache Tomcat. <br>
+        HttpServlet este utilizat pentru a crea controlerele și pentru a primi și trimite răspunsuri către clienți.<br> 
+        HikariCP este o librărie de bază pentru gestionarea conexiunilor JDBC și oferă un connection pool eficient pentru interacțiunea
+        cu baza de date. Aceasta facilitează conectarea și comunicarea cu baza de date, asigurând performanță și scalabilitate în aplicație.<br>
+        Apache Tomcat este un container care oferă suport pentru rularea și administrarea ciclului de viață al servleturilor.
+        Acesta asigură gestionarea cererilor HTTP, procesarea și trimiterea răspunsurilor către clienți.
+        Tomcat permite aplicației să ruleze pe server și să fie accesibilă prin HTTP.<br>
+        Astfel, prin utilizarea JavaEE, HttpServlet și HikariCP împreună cu Apache Tomcat, se construiește un mediu robust
+        și eficient pentru dezvoltarea backend-ului aplicației. 
       </p>
+    </section>
     </section>
     <section id="system-diagrams">
       <h3>Diagramele C4 ale aplicatiei</h3>
@@ -217,7 +238,7 @@
       <figure>
         <img
           style="width: 100%"
-          src="./C4_level1.png"
+          src="./Nivel1.png"
           alt="C4-level1"
         />
         <figcaption>Diagrama C4 nivel 1</figcaption>
@@ -226,7 +247,7 @@
       <figure>
         <img
           style="width: 100%"
-          src="./C4_level2.png"
+          src="./Nivel2.png"
           alt="C4-level2"
         />
         <figcaption>Diagram C4 nivel 2</figcaption>
@@ -235,7 +256,7 @@
       <figure>
         <img
           style="width: 100%"
-          src="./C4_level3.png"
+          src="./Nivel3.png"
           alt="C4-level3"
         />
         <figcaption>Diagrama C4 nivel 3</figcaption>
@@ -244,7 +265,7 @@
       <figure>
         <img
           style="width: 100%"
-          src="./C4-level4_database_diagram.png"
+          src="./Nivel4.png"
           alt="C4-level4"
         />
         <figcaption>Diagrama C4 nivel 4</figcaption>
@@ -289,7 +310,7 @@
           Utilizatorul completeaza campurile necesare (nume, prenume, email si
           parola), apasa pe butonul "register" si, in cazul in care informatiile
           sunt valide (email-ul este nou si respecta formatul standard, parola
-          corespunde), un nou cont de utilizator va fi creat.
+          este de minim 16 caractere), un nou cont de utilizator va fi creat.
         </p>
       </section>
       <section id="authorization">
@@ -299,7 +320,8 @@
           ce va stoca email-ul utilizatorului, acest token fiind inclus intr-un
           cookie. Acesta are scopul de a identifica utilizatorul atunci cand
           acceseaza anumite endpoint-uri. Aceasta autentificare se realizeaza
-          prin intermediul unui filtru de securitate.
+          prin intermediul unui filtru de securitate. In plus, acest JWT este
+          distrus atunci cand utilizatorul se delogheaza.
         </p>
       </section>
 
@@ -350,9 +372,8 @@
       <section id="security">
         <h3>Securitatea datelor</h3>
         <p>
-          Securitatea datelor este asigurata de algoritmul de criptare folosit
-          pentru a codifica parolele pe 128 de biti, parolele avand o lungiem
-          minima de 16 caractere.
+          Securitatea datelor este asigurata de algoritmul de criptare folosit si anume AES-128 pe 16 biti
+          pentru a codifica parolele pe 128 de biti, iar parolele criptate sunt stocate in baza de date.
         </p>
       </section>
     </section>
@@ -381,8 +402,10 @@
       </p>
 
       <p>
-        Aplicatia este responsive, ea putand fi disponibila si pe telefonul
-        mobil.
+        Aplicația este concepută într-un mod responsive, ceea ce înseamnă că poate fi accesată
+         și utilizată pe diverse dispozitive, inclusiv pe telefoanele mobile. Design-ul și 
+         structura aplicației au fost optimizate astfel încât să ofere o experiență plăcută și 
+         funcțională indiferent de dimensiunea ecranului pe care este afișată.
       </p>
       <p>
         Foile de still css au fost modularizate pentru scalabilitate, fiecare
@@ -391,6 +414,145 @@
         oriunde este folosit acel fisier. De asemenea, pentru a avea un singur
         loc in care sunt puse dimensiuni/culori au fost create variabile css.
       </p>
+    </section>
+
+    <section id="code">
+      <h2>Documentarea codului</h2>
+      <section id="Criptarea parolelor">
+        <h3>Criptarea datelor</h3>
+        <br />
+        <figure>
+          <img
+            style="width: 100%"
+            src="./criptClass.png"
+            alt="criptClass"
+          />
+          <figcaption>Clasa responsabilă de criptarea și decriptarea parolelor</figcaption>
+          <p>
+          Folosind algoritmul AES (Advanced Encryption Standard). Aceasta oferă două metode statice:
+          encryptString și decryptString, care permit criptarea și decriptarea unui string respectiv a parolei.<br>
+
+          Metoda encryptString: primește un string ca parametru, care reprezintă textul pe care dorim să-l criptăm.
+          Rezultatul criptării este codificat în Base64 și returnat ca un string criptat cu algoritmul "AES" si cheia secretă SECRET_KEY.<br>
+
+          Metoda decryptString: primește un string "ciphertext" ca parametru, care reprezintă textul criptat pe care dorim să-l decriptăm.
+          Rezultatul decriptării este returnat ca un string reprezentând textul inițial, folosind algoritmul "AES" și cheia secretă SECRET_KEY.
+          </p>
+        </figure>
+        <br />
+      </section>
+
+      <section id="Conexiunea la DB">
+        <h3>Conexiunea la DB</h3>
+        <br />
+        <figure>
+          <img
+            style="width: 100%"
+            src="./dbClass.png"
+            alt="dbClass"
+          />
+          <figcaption>Clasa responsabilă de conexiunea la baza de date</figcaption>
+          <p>
+            Clasa DataBase este responsabilă de gestionarea conexiunii la baza de date folosind HikariCP, 
+            o bibliotecă Java pentru pool-ul de conexiuni JDBC. Aceasta furnizează metode pentru obținerea 
+            unei conexiuni la baza de date și închiderea conexiunii. Aceasta implementeaza design pattern-ul Singleton 
+            pentru a asigura o singura instanta a bazei de date.<br>
+            <ul>
+            <li>Metoda getConnection() returnează o conexiune la baza de date utilizând dataSource.</li>
+            <li>Metoda getDataSource() returnează un obiect HikariDataSource configurat cu parametrii specificați.</li>
+            <li>Metoda closeConnection() închide conexiunea curentă la baza de date obținută din dataSource.</li>
+            <li>Metoda rollBack() efectuează o operațiune de rollback pe conexiunea curentă la baza de date obținută din dataSource.</li>
+            </ul>
+          </p>
+        </figure>
+        <br />
+      </section>
+
+      <section id="Filtrarea">
+        <h3>Filtrarea</h3>
+        <br />
+        <figure>
+          <img
+            style="width: 100%"
+            src="./filter1.png"
+            alt="filter1"
+          />
+          <!-- <img
+            style="width: 100%"
+            src="./filter2.png"
+            alt="filter2"
+          /> -->
+          <figcaption>Clasa responsponsabila de filtrarea userilor</figcaption>
+          <p>
+            Clasa AuthenticationFilter este un filtru care implementează interfața Filter și este utilizată pentru a asigura
+            autentificarea și autorizarea utilizatorilor în aplicație. Acest filtru este configurat prin adnotarea @WebFilter și
+            este aplicat pentru toate cererile primite de la client.<br>
+            Aceasta clasa contine metoda doFilter() care proceseaza cererile primite. În funcție de metoda HTTP și calea cererii,
+            acest filtru verifică autentificarea utilizatorului prin intermediul unui token stocat într-un cookie denumit "sessionId".
+            Token-ul este decodificat și verificat pentru a valida semnătura token-ului.<br>
+            Dacă token-ul este valid și utilizatorul asociat acestuia există în sistem, filtrul autorizeaza userul pentru a accesa resursa solicitată.
+            În caz contrar, filtrul returnează un cod de stare HTTP 401 (Unauthorized), indicând că utilizatorul nu are drepturi de acces necesare pentru a accesa resursa solicitată.
+          </p>
+        </figure>
+        <br />
+      </section>
+
+      <section id="MVC(Model - View - Controller)">
+        <h3>MVC(Model - View - Controller)</h3>
+        <br />
+        <figure>
+          <img
+            style="width: 100%"
+            src="./entity.png"
+            alt="entity"
+          />
+          <figcaption>Clasa de tip Entity</figcaption>
+          <p>
+            Reprezintă o clasă care mapează o entitate din baza de date. Aceasta poate conține proprietăți
+            corespunzătoare coloanelor tabelei și oferă o modalitate de a interacționa cu datele din tabel.
+          </p>
+        </figure>
+        <figure>
+          <img
+            style="width: 100%"
+            src="./repo.png"
+            alt="repository"
+          />
+          <figcaption>Clasa de tip Repository</figcaption>
+          <p>
+           Este responsabila cu comunicarea cu baza de date. Acesta ofera metode pentru a realiza operații de baza, cum ar fi crearea,
+           citirea, actualizarea și ștergerea (CRUD) asupra entităților. Repository-ul facilitează abstractizarea detaliilor specifice
+           bazei de date și oferă o interfață simplă pentru interacțiunea cu datele. Abstractizarea este data de implementarea
+           metodelor care contin query-uri SQL si care returneaza obiecte de tipul entitate.
+          </p>
+        </figure>
+        <figure>
+          <img
+            style="width: 100%"
+            src="./service.png"
+            alt="service"
+          />
+          <figcaption>Clasa de tip Service</figcaption>
+          <p>
+            Service-ul folosește repository-ul pentru a accesa și manipula datele pentru a implementa logica necesara aplicatiei.
+          </p>
+        </figure>
+        <figure>
+          <img
+            style="width: 100%"
+            src="./controller.png"
+            alt="Controller"
+          />
+          <figcaption>Clasa de tip Controller</figcaption>
+          <p>
+            Aceasta oferă un punct de intrare în aplicație pentru cererile primite de la clienti. Controller-ul primește cererea,
+            apelează serviciul corespunzător și returnează răspunsul către client, gestionand rutele și parametrii cererii.
+          </p>
+        </figure>
+        <br />
+
+
+      </section>
     </section>
 
     <section id="other-resources">
