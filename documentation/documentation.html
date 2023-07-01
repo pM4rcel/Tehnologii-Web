@@ -138,7 +138,7 @@
           <li>Modificarea datelor asociate utilizatorului</li>
           <li>Adaugarea unui rating unei anumite carti</li>
           <li>Alaturarea unui grup</li>
-          <li>Vizualizarea de diferite statistici </li>
+          <li>Vizualizarea de diferite statistici</li>
           <li>Ofera utilizatorului un management al cartilor parcurse</li>
           <li>Oferirea de statisitici in format CSV si DocBook</li>
           <li>Adaugarea de review-uri si comentarii la review-uri</li>
@@ -158,13 +158,13 @@
 
     <section id="interfaces">
       <h2>Interfete externe</h2>
-        <p>
-          Aplicatia ofera o interfata moderna, placuta din punct de vedere
-          vizual pentru a imbunatati experienta utilizatorului. Boo poate fi
-          folosita atat pe ecrane mari cat si pe browser-ul telefonului al carui
-          ecran este de dimensiuni mai reduse, oferind in continuare o
-          experienta placuta utilizatorului datorita design-ului responsive.
-        </p>
+      <p>
+        Aplicatia ofera o interfata moderna, placuta din punct de vedere vizual
+        pentru a imbunatati experienta utilizatorului. Boo poate fi folosita
+        atat pe ecrane mari cat si pe browser-ul telefonului al carui ecran este
+        de dimensiuni mai reduse, oferind in continuare o experienta placuta
+        utilizatorului datorita design-ului responsive.
+      </p>
     </section>
     <section id="software-interface">
       <h2>Interfete software</h2>
@@ -174,100 +174,105 @@
         datelor de la server si trimiterea de cereri la anumite endpoint-uri
         oferite de server.
       </p>
-      
-        <section id="Baza de date">
-          <h3>Baza de date si conexiunea la aceasta</h3>
+
+      <section id="Baza de date">
+        <h3>Baza de date si conexiunea la aceasta</h3>
         <p>
-        Baza de date folosita este PostgreSQL deoarece se poate integra usor cu
-        limbajul de programare folosit pe partea de backend. Pentru conexiunea
-        la baza de date s-a folosit HikariCP si JDBC.<br>
-        HikariCP este o librarie Java, folosita pentru gestionarea eficienta a conexiunilor JDBC 
-        catre baza de date. Aceasta implementeaza un sistem de connection pools, care 
-        permite aplicatiilor sa utilizeze si sa partajeze conexiuni pre-stabilite catre baza de date, 
-        in loc sa creeze o noua conexiune pentru fiecare operatiune. Acest lucru ajuta la reducerea 
-        timpului si resurselor necesare pentru stabilirea conexiunilor si imbunatateste performanta aplicatiei.
-      </p>
-    </section>
+          Baza de date folosita este PostgreSQL deoarece se poate integra usor
+          cu limbajul de programare folosit pe partea de backend. Pentru
+          conexiunea la baza de date s-a folosit HikariCP si JDBC.<br />
+          HikariCP este o librarie Java, folosita pentru gestionarea eficienta a
+          conexiunilor JDBC catre baza de date. Aceasta implementeaza un sistem
+          de connection pools, care permite aplicatiilor sa utilizeze si sa
+          partajeze conexiuni pre-stabilite catre baza de date, in loc sa creeze
+          o noua conexiune pentru fiecare operatiune. Acest lucru ajuta la
+          reducerea timpului si resurselor necesare pentru stabilirea
+          conexiunilor si imbunatateste performanta aplicatiei.
+        </p>
+      </section>
       <section id="Design-ul">
         <h3>Design-ul arhitectural</h3>
-      <p>
-        Design-ul arhitectural al aplicatiei este MVC(Model - View - Controller)
-        pentru a modulariza aplicatia si a usura scrierea de cod. Partea de
-        Model este asociata partii de server, claselor de tip Repository care
-        modeleaza datele si asigura comunicarea cu baza de date si a claselor de
-        tip Service care utilizeaza repository-urile pentru prelucrarea datelor.
-        Partea de View este asociata tot server-ului, si este reprezentata de
-        modul in care reprezentam datele si modul in care le trimitem. Datele
-        sunt reprezentate de clasele de tip entitate care reflecta tabelele
-        bazei de date. Datele trimise de server catre clienti sunt in format
-        JSON. Partea de Controller este reprezentata de clasele care contin
-        "Controller" in nume ce extind clasa abstracta HttpServlet. Acestea
-        preiau datele din request-urile clientilor, le prelucreaza folosindu-se
-        de clasele Service si apoi genreaza raspunsuri corespunzatoare cu
-        cerererile clientilor.
-      </p>
-    </section>
+        <p>
+          Design-ul arhitectural al aplicatiei este MVC(Model - View -
+          Controller) pentru a modulariza aplicatia si a usura scrierea de cod.
+          Partea de Model este asociata partii de server, claselor de tip
+          Repository care modeleaza datele si asigura comunicarea cu baza de
+          date si a claselor de tip Service care utilizeaza repository-urile
+          pentru prelucrarea datelor. Partea de View este asociata tot
+          server-ului, si este reprezentata de modul in care reprezentam datele
+          si modul in care le trimitem. Datele sunt reprezentate de clasele de
+          tip entitate care reflecta tabelele bazei de date. Datele trimise de
+          server catre clienti sunt in format JSON. Partea de Controller este
+          reprezentata de clasele care contin "Controller" in nume ce extind
+          clasa abstracta HttpServlet. Acestea preiau datele din request-urile
+          clientilor, le prelucreaza folosindu-se de clasele Service si apoi
+          genreaza raspunsuri corespunzatoare cu cerererile clientilor.
+        </p>
+      </section>
       <section id="Frontend-ul">
         <h3>Frontend-ul</h3>
-      <p>
-        Frontend-ul este scris in HTML5, CSS3 si JavaScript, fara a se folosi alte librarii. 
-        Prin utilizarea directa a acestor limbaje, se obtine un control mai mare asupra codului si o mai mare 
-        flexibilitate in crearea interfetelor utilizator. De asemenea, acest mod de abordare poate contribui
-        la performanta si incarcarea rapida a paginilor, deoarece nu sunt implicate procese suplimentare de gestionare 
-        si incarcare a librariilor externe.
-      </p>
-    </section>
+        <p>
+          Frontend-ul este scris in HTML5, CSS3 si JavaScript, fara a se folosi
+          alte librarii. Prin utilizarea directa a acestor limbaje, se obtine un
+          control mai mare asupra codului si o mai mare flexibilitate in crearea
+          interfetelor utilizator. De asemenea, acest mod de abordare poate
+          contribui la performanta si incarcarea rapida a paginilor, deoarece nu
+          sunt implicate procese suplimentare de gestionare si incarcare a
+          librariilor externe. API-urile folosite sunt: Fetch API, pentru a
+          trimite cereri catre REST API-ul propriu si pentru a primi raspunsuri
+          de la acesta, Web Components API, pentru a crea componente customizate
+          si pentru a le folosi in aplicatie.
+        </p>
+      </section>
       <section id="Backend-ul">
         <h3>Backend-ul</h3>
-      <p>
-        Pentru backend, s-a folosi JavaEE, HttpServlet, HikariCP si Apache Tomcat. <br>
-        HttpServlet este utilizat pentru a crea controlerele si pentru a primi si trimite raspunsuri catre clienti.<br> 
-        HikariCP este o librarie de baza pentru gestionarea conexiunilor JDBC si ofera un connection pool eficient pentru interactiunea
-        cu baza de date. Aceasta faciliteaza conectarea si comunicarea cu baza de date, asigurand performanta si scalabilitate in aplicatie.<br>
-        Apache Tomcat este un container care ofera suport pentru rularea si administrarea ciclului de viata al servleturilor.
-        Acesta asigura gestionarea cererilor HTTP, procesarea si trimiterea raspunsurilor catre clienti.
-        Tomcat permite aplicatiei sa ruleze pe server si sa fie accesibila prin HTTP.<br>
-        Astfel, prin utilizarea JavaEE, HttpServlet si HikariCP impreuna cu Apache Tomcat, se construieste un mediu robust
-        si eficient pentru dezvoltarea backend-ului aplicatiei. 
-      </p>
-    </section>
+        <p>
+          Pentru backend, s-a folosi JavaEE, HttpServlet, HikariCP si Apache
+          Tomcat. <br />
+          HttpServlet este utilizat pentru a crea controlerele si pentru a primi
+          si trimite raspunsuri catre clienti.<br />
+          HikariCP este o librarie de baza pentru gestionarea conexiunilor JDBC
+          si ofera un connection pool eficient pentru interactiunea cu baza de
+          date. Aceasta faciliteaza conectarea si comunicarea cu baza de date,
+          asigurand performanta si scalabilitate in aplicatie.<br />
+          Apache Tomcat este un container care ofera suport pentru rularea si
+          administrarea ciclului de viata al servleturilor. Acesta asigura
+          gestionarea cererilor HTTP, procesarea si trimiterea raspunsurilor
+          catre clienti. Tomcat permite aplicatiei sa ruleze pe server si sa fie
+          accesibila prin HTTP.<br />
+          Astfel, prin utilizarea JavaEE, HttpServlet si HikariCP impreuna cu
+          Apache Tomcat, se construieste un mediu robust si eficient pentru
+          dezvoltarea backend-ului aplicatiei.
+          <br /><br />
+          Pe langa REST API-ul propriu, aplicatia foloseste o aplicatie Web unde
+          sunt stocate resurcele publice ale aplicatiei (fisierele CSS,
+          JavaScript, imagini, etc.). Aceasta aplicatie este scrisa in
+          JavaScript si foloseste NodeJS. Aplicatia Web este folosita pentru a
+          servi resursele publice ale aplicatiei si pentru a redirectiona
+          clientii catre aplicatia principala.
+        </p>
+      </section>
     </section>
     <section id="system-diagrams">
       <h3>Diagramele C4 ale aplicatiei</h3>
       <br />
       <figure>
-        <img
-          style="width: 100%"
-          src="./Nivel1.png"
-          alt="C4-level1"
-        />
+        <img style="width: 100%" src="./Nivel1.png" alt="C4-level1" />
         <figcaption>Diagrama C4 nivel 1</figcaption>
       </figure>
       <br />
       <figure>
-        <img
-          style="width: 100%"
-          src="./Nivel2.png"
-          alt="C4-level2"
-        />
+        <img style="width: 100%" src="./Nivel2.png" alt="C4-level2" />
         <figcaption>Diagram C4 nivel 2</figcaption>
       </figure>
       <br />
       <figure>
-        <img
-          style="width: 100%"
-          src="./Nivel3.png"
-          alt="C4-level3"
-        />
+        <img style="width: 100%" src="./Nivel3.png" alt="C4-level3" />
         <figcaption>Diagrama C4 nivel 3</figcaption>
       </figure>
       <br />
       <figure>
-        <img
-          style="width: 100%"
-          src="./Nivel4.png"
-          alt="C4-level4"
-        />
+        <img style="width: 100%" src="./Nivel4.png" alt="C4-level4" />
         <figcaption>Diagrama C4 nivel 4</figcaption>
       </figure>
     </section>
@@ -372,8 +377,9 @@
       <section id="security">
         <h3>Securitatea datelor</h3>
         <p>
-          Securitatea datelor este asigurata de algoritmul de criptare folosit si anume AES-128 pe 16 biti
-          pentru a codifica parolele pe 128 de biti, iar parolele criptate sunt stocate in baza de date.
+          Securitatea datelor este asigurata de algoritmul de criptare folosit
+          si anume AES-128 pe 16 biti pentru a codifica parolele pe 128 de biti,
+          iar parolele criptate sunt stocate in baza de date.
         </p>
       </section>
     </section>
@@ -402,10 +408,11 @@
       </p>
 
       <p>
-        Aplicatia este conceputa intr-un mod responsive, ceea ce inseamna ca poate fi accesata
-         si utilizata pe diverse dispozitive, inclusiv pe telefoanele mobile. Design-ul si 
-         structura aplicatiei au fost optimizate astfel incat sa ofere o experienta placuta si 
-         functionala indiferent de dimensiunea ecranului pe care este afisata.
+        Aplicatia este conceputa intr-un mod responsive, ceea ce inseamna ca
+        poate fi accesata si utilizata pe diverse dispozitive, inclusiv pe
+        telefoanele mobile. Design-ul si structura aplicatiei au fost optimizate
+        astfel incat sa ofere o experienta placuta si functionala indiferent de
+        dimensiunea ecranului pe care este afisata.
       </p>
       <p>
         Foile de still css au fost modularizate pentru scalabilitate, fiecare
@@ -422,21 +429,25 @@
         <h3>Criptarea datelor</h3>
         <br />
         <figure>
-          <img
-            style="width: 100%"
-            src="./criptClass.png"
-            alt="criptClass"
-          />
-          <figcaption>Clasa responsabila de criptarea si decriptarea parolelor</figcaption>
+          <img style="width: 100%" src="./criptClass.png" alt="criptClass" />
+          <figcaption>
+            Clasa responsabila de criptarea si decriptarea parolelor
+          </figcaption>
           <p>
-          Folosind algoritmul AES (Advanced Encryption Standard). Aceasta ofera doua metode statice:
-          encryptString si decryptString, care permit criptarea si decriptarea unui string respectiv a parolei.<br>
+            Folosind algoritmul AES (Advanced Encryption Standard). Aceasta
+            ofera doua metode statice: encryptString si decryptString, care
+            permit criptarea si decriptarea unui string respectiv a parolei.<br />
 
-          Metoda encryptString: primeste un string ca parametru, care reprezinta textul pe care dorim sa-l criptam.
-          Rezultatul criptarii este codificat in Base64 si returnat ca un string criptat cu algoritmul "AES" si cheia secreta SECRET_KEY.<br>
+            Metoda encryptString: primeste un string ca parametru, care
+            reprezinta textul pe care dorim sa-l criptam. Rezultatul criptarii
+            este codificat in Base64 si returnat ca un string criptat cu
+            algoritmul "AES" si cheia secreta SECRET_KEY.<br />
 
-          Metoda decryptString: primeste un string "ciphertext" ca parametru, care reprezinta textul criptat pe care dorim sa-l decriptam.
-          Rezultatul decriptarii este returnat ca un string reprezentand textul initial, folosind algoritmul "AES" si cheia secreta SECRET_KEY.
+            Metoda decryptString: primeste un string "ciphertext" ca parametru,
+            care reprezinta textul criptat pe care dorim sa-l decriptam.
+            Rezultatul decriptarii este returnat ca un string reprezentand
+            textul initial, folosind algoritmul "AES" si cheia secreta
+            SECRET_KEY.
           </p>
         </figure>
         <br />
@@ -446,24 +457,37 @@
         <h3>Conexiunea la DB</h3>
         <br />
         <figure>
-          <img
-            style="width: 100%"
-            src="./dbClass.png"
-            alt="dbClass"
-          />
-          <figcaption>Clasa responsabila de conexiunea la baza de date</figcaption>
+          <img style="width: 100%" src="./dbClass.png" alt="dbClass" />
+          <figcaption>
+            Clasa responsabila de conexiunea la baza de date
+          </figcaption>
           <p>
-            Clasa DataBase este responsabila de gestionarea conexiunii la baza de date folosind HikariCP, 
-            o biblioteca Java pentru pool-ul de conexiuni JDBC. Aceasta furnizeaza metode pentru obtinerea 
-            unei conexiuni la baza de date si inchiderea conexiunii. Aceasta implementeaza design pattern-ul Singleton 
-            pentru a asigura o singura instanta a bazei de date.<br>
-            <ul>
-            <li>Metoda getConnection() returneaza o conexiune la baza de date utilizand dataSource.</li>
-            <li>Metoda getDataSource() returneaza un obiect HikariDataSource configurat cu parametrii specificati.</li>
-            <li>Metoda closeConnection() inchide conexiunea curenta la baza de date obtinuta din dataSource.</li>
-            <li>Metoda rollBack() efectueaza o operatiune de rollback pe conexiunea curenta la baza de date obtinuta din dataSource.</li>
-            </ul>
+            Clasa DataBase este responsabila de gestionarea conexiunii la baza
+            de date folosind HikariCP, o biblioteca Java pentru pool-ul de
+            conexiuni JDBC. Aceasta furnizeaza metode pentru obtinerea unei
+            conexiuni la baza de date si inchiderea conexiunii. Aceasta
+            implementeaza design pattern-ul Singleton pentru a asigura o singura
+            instanta a bazei de date.<br />
           </p>
+
+          <ul>
+            <li>
+              Metoda getConnection() returneaza o conexiune la baza de date
+              utilizand dataSource.
+            </li>
+            <li>
+              Metoda getDataSource() returneaza un obiect HikariDataSource
+              configurat cu parametrii specificati.
+            </li>
+            <li>
+              Metoda closeConnection() inchide conexiunea curenta la baza de
+              date obtinuta din dataSource.
+            </li>
+            <li>
+              Metoda rollBack() efectueaza o operatiune de rollback pe
+              conexiunea curenta la baza de date obtinuta din dataSource.
+            </li>
+          </ul>
         </figure>
         <br />
       </section>
@@ -472,11 +496,7 @@
         <h3>Filtrarea</h3>
         <br />
         <figure>
-          <img
-            style="width: 100%"
-            src="./filter1.png"
-            alt="filter1"
-          />
+          <img style="width: 100%" src="./filter1.png" alt="filter1" />
           <!-- <img
             style="width: 100%"
             src="./filter2.png"
@@ -484,14 +504,21 @@
           /> -->
           <figcaption>Clasa responsponsabila de filtrarea userilor</figcaption>
           <p>
-            Clasa AuthenticationFilter este un filtru care implementeaza interfata Filter si este utilizata pentru a asigura
-            autentificarea si autorizarea utilizatorilor in aplicatie. Acest filtru este configurat prin adnotarea @WebFilter si
-            este aplicat pentru toate cererile primite de la client.<br>
-            Aceasta clasa contine metoda doFilter() care proceseaza cererile primite. in functie de metoda HTTP si calea cererii,
-            acest filtru verifica autentificarea utilizatorului prin intermediul unui token stocat intr-un cookie denumit "sessionId".
-            Token-ul este decodificat si verificat pentru a valida semnatura token-ului.<br>
-            Daca token-ul este valid si utilizatorul asociat acestuia exista in sistem, filtrul autorizeaza userul pentru a accesa resursa solicitata.
-            in caz contrar, filtrul returneaza un cod de stare HTTP 401 (Unauthorized), indicand ca utilizatorul nu are drepturi de acces necesare pentru a accesa resursa solicitata.
+            Clasa AuthenticationFilter este un filtru care implementeaza
+            interfata Filter si este utilizata pentru a asigura autentificarea
+            si autorizarea utilizatorilor in aplicatie. Acest filtru este
+            configurat prin adnotarea @WebFilter si este aplicat pentru toate
+            cererile primite de la client.<br />
+            Aceasta clasa contine metoda doFilter() care proceseaza cererile
+            primite. in functie de metoda HTTP si calea cererii, acest filtru
+            verifica autentificarea utilizatorului prin intermediul unui token
+            stocat intr-un cookie denumit "sessionId". Token-ul este decodificat
+            si verificat pentru a valida semnatura token-ului.<br />
+            Daca token-ul este valid si utilizatorul asociat acestuia exista in
+            sistem, filtrul autorizeaza userul pentru a accesa resursa
+            solicitata. in caz contrar, filtrul returneaza un cod de stare HTTP
+            401 (Unauthorized), indicand ca utilizatorul nu are drepturi de
+            acces necesare pentru a accesa resursa solicitata.
           </p>
         </figure>
         <br />
@@ -501,57 +528,102 @@
         <h3>MVC(Model - View - Controller)</h3>
         <br />
         <figure>
-          <img
-            style="width: 100%"
-            src="./entity.png"
-            alt="entity"
-          />
+          <img style="width: 100%" src="./entity.png" alt="entity" />
           <figcaption>Clasa de tip Entity</figcaption>
           <p>
-            Reprezinta o clasa care mapeaza o entitate din baza de date. Aceasta poate contine proprietati
-            corespunzatoare coloanelor tabelei si ofera o modalitate de a interactiona cu datele din tabel.
+            Reprezinta o clasa care mapeaza o entitate din baza de date. Aceasta
+            poate contine proprietati corespunzatoare coloanelor tabelei si
+            ofera o modalitate de a interactiona cu datele din tabel.
           </p>
         </figure>
         <figure>
-          <img
-            style="width: 100%"
-            src="./repo.png"
-            alt="repository"
-          />
+          <img style="width: 100%" src="./repo.png" alt="repository" />
           <figcaption>Clasa de tip Repository</figcaption>
           <p>
-           Este responsabila cu comunicarea cu baza de date. Acesta ofera metode pentru a realiza operatii de baza, cum ar fi crearea,
-           citirea, actualizarea si stergerea (CRUD) asupra entitatilor. Repository-ul faciliteaza abstractizarea detaliilor specifice
-           bazei de date si ofera o interfata simpla pentru interactiunea cu datele. Abstractizarea este data de implementarea
-           metodelor care contin query-uri SQL si care returneaza obiecte de tipul entitate.
+            Este responsabila cu comunicarea cu baza de date. Acesta ofera
+            metode pentru a realiza operatii de baza, cum ar fi crearea,
+            citirea, actualizarea si stergerea (CRUD) asupra entitatilor.
+            Repository-ul faciliteaza abstractizarea detaliilor specifice bazei
+            de date si ofera o interfata simpla pentru interactiunea cu datele.
+            Abstractizarea este data de implementarea metodelor care contin
+            query-uri SQL si care returneaza obiecte de tipul entitate.
           </p>
         </figure>
         <figure>
-          <img
-            style="width: 100%"
-            src="./service.png"
-            alt="service"
-          />
+          <img style="width: 100%" src="./service.png" alt="service" />
           <figcaption>Clasa de tip Service</figcaption>
           <p>
-            Service-ul foloseste repository-ul pentru a accesa si manipula datele pentru a implementa logica necesara aplicatiei.
+            Service-ul foloseste repository-ul pentru a accesa si manipula
+            datele pentru a implementa logica necesara aplicatiei.
           </p>
         </figure>
         <figure>
-          <img
-            style="width: 100%"
-            src="./controller.png"
-            alt="Controller"
-          />
+          <img style="width: 100%" src="./controller.png" alt="Controller" />
           <figcaption>Clasa de tip Controller</figcaption>
           <p>
-            Aceasta ofera un punct de intrare in aplicatie pentru cererile primite de la clienti. Controller-ul primeste cererea,
-            apeleaza serviciul corespunzator si returneaza raspunsul catre client, gestionand rutele si parametrii cererii.
+            Aceasta ofera un punct de intrare in aplicatie pentru cererile
+            primite de la clienti. Controller-ul primeste cererea, apeleaza
+            serviciul corespunzator si returneaza raspunsul catre client,
+            gestionand rutele si parametrii cererii.
           </p>
         </figure>
         <br />
-
-
+      </section>
+      <section id="Web-Components">
+        <h3>Web Components</h3>
+        <br />
+        <figure>
+          <img
+            style="width: 100%"
+            src="./BookCard.jpg"
+            alt="boo-card Web Components"
+          />
+          <figurecaption
+            >Declararea unui HTMLElement personalizat pentru componenta
+            "book-card" bazată pe șablonul HTML5 de mai jos.</figurecaption
+          >
+        </figure>
+        <figure>
+          <img
+            style="width: 100%"
+            src="./BookCard--HTML--template.jpg"
+            alt="boo-card HTML5 template"
+          />
+          <figurecaption
+            >Blueprintul unei componentei custom din Web Components folosing
+            HTML5 templates</figurecaption
+          >
+        </figure>
+        <figure>
+          <img
+            style="width: 100%"
+            src="./exampleOfUsingBookCard.jpg"
+            alt="a code snippet of insantiating my Web Components"
+          />
+          <figurecaption
+            >Un exemplu unde este instantiata aceasta componenta, mai precis la
+            preluarea datelor despre un autor si afisarea cartilor scrise de
+            acesta</figurecaption
+          >
+          <p></p>
+        </figure>
+      </section>
+      <section id="API-Calls">
+        <h3>Apeluri la API folosind Fetch API din JS</h3>
+        <figure>
+          <img
+            style="width: 100%"
+            src="./fetchAPI-Calls.jpg"
+            alt="cod ce reprezinta utilizare fetch API-ului"
+            style="width: 100%"
+          />
+          <figurecaption
+            >Mai sus avem prezente mai multe apeluri asincrone catre REST API
+            aplicatiei, mai precis, adaugarea unui status la o anumita carte,
+            preluarea genului unei carti, respectiv crearea unui review la o
+            carte</figurecaption
+          >
+        </figure>
       </section>
     </section>
 

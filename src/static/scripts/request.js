@@ -46,7 +46,7 @@ const loginUser = async (event) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            credentials: "include",
+            credentials: "omit",
             body: JSON.stringify({
                 email: event.target.email.value,
                 password: event.target.password.value
